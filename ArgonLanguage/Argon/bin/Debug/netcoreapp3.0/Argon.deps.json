@@ -1,0 +1,100 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "Argon/1.0.0": {
+        "dependencies": {
+          "ArgonRunnable": "1.0.0"
+        },
+        "runtime": {
+          "Argon.dll": {}
+        }
+      },
+      "ArgonAST/1.0.0": {
+        "dependencies": {
+          "ArgonASTModels": "1.0.0",
+          "ArgonSymbols": "1.0.0",
+          "Models": "1.0.0"
+        },
+        "runtime": {
+          "ArgonAST.dll": {}
+        }
+      },
+      "ArgonASTModels/1.0.0": {
+        "runtime": {
+          "ArgonASTModels.dll": {}
+        }
+      },
+      "ArgonLexer/1.0.0": {
+        "dependencies": {
+          "ArgonSymbols": "1.0.0",
+          "Models": "1.0.0"
+        },
+        "runtime": {
+          "ArgonLexer.dll": {}
+        }
+      },
+      "ArgonRunnable/1.0.0": {
+        "dependencies": {
+          "ArgonAST": "1.0.0",
+          "ArgonLexer": "1.0.0",
+          "Models": "1.0.0"
+        },
+        "runtime": {
+          "ArgonRunnable.dll": {}
+        }
+      },
+      "ArgonSymbols/1.0.0": {
+        "runtime": {
+          "ArgonSymbols.dll": {}
+        }
+      },
+      "Models/1.0.0": {
+        "runtime": {
+          "Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Argon/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonAST/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonASTModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonLexer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonRunnable/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonSymbols/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

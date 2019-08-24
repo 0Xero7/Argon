@@ -1,0 +1,9 @@
+D:\Projects\Argon\ArgonLanguage\ArgonASTModels\bin\Debug\netcoreapp3.0\ArgonASTModels.deps.json
+D:\Projects\Argon\ArgonLanguage\ArgonASTModels\bin\Debug\netcoreapp3.0\ArgonASTModels.dll
+D:\Projects\Argon\ArgonLanguage\ArgonASTModels\bin\Debug\netcoreapp3.0\ArgonASTModels.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonASTModels\obj\Debug\netcoreapp3.0\ArgonASTModels.csproj.CoreCompileInputs.cache
+D:\Projects\Argon\ArgonLanguage\ArgonASTModels\obj\Debug\netcoreapp3.0\ArgonASTModels.AssemblyInfoInputs.cache
+D:\Projects\Argon\ArgonLanguage\ArgonASTModels\obj\Debug\netcoreapp3.0\ArgonASTModels.AssemblyInfo.cs
+D:\Projects\Argon\ArgonLanguage\ArgonASTModels\obj\Debug\netcoreapp3.0\ArgonASTModels.dll
+D:\Projects\Argon\ArgonLanguage\ArgonASTModels\obj\Debug\netcoreapp3.0\ArgonASTModels.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonASTModels\obj\Debug\netcoreapp3.0\ArgonASTModels.csprojAssemblyReference.cache

@@ -1,0 +1,183 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "ArgonAST/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "ArgonASTModels": "1.0.0",
+          "ArgonSymbols": "1.0.0",
+          "Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ArgonAST.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ArgonAST.dll": {}
+        }
+      },
+      "ArgonASTModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/ArgonASTModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ArgonASTModels.dll": {}
+        }
+      },
+      "ArgonLexer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "ArgonSymbols": "1.0.0",
+          "Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ArgonLexer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ArgonLexer.dll": {}
+        }
+      },
+      "ArgonRunnable/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "ArgonAST": "1.0.0",
+          "ArgonLexer": "1.0.0",
+          "Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ArgonRunnable.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ArgonRunnable.dll": {}
+        }
+      },
+      "ArgonSymbols/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/ArgonSymbols.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ArgonSymbols.dll": {}
+        }
+      },
+      "Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ArgonAST/1.0.0": {
+      "type": "project",
+      "path": "../ArgonAST/ArgonAST.csproj",
+      "msbuildProject": "../ArgonAST/ArgonAST.csproj"
+    },
+    "ArgonASTModels/1.0.0": {
+      "type": "project",
+      "path": "../ArgonASTModels/ArgonASTModels.csproj",
+      "msbuildProject": "../ArgonASTModels/ArgonASTModels.csproj"
+    },
+    "ArgonLexer/1.0.0": {
+      "type": "project",
+      "path": "../ArgonLexer/ArgonLexer.csproj",
+      "msbuildProject": "../ArgonLexer/ArgonLexer.csproj"
+    },
+    "ArgonRunnable/1.0.0": {
+      "type": "project",
+      "path": "../ArgonRunnable/ArgonRunnable.csproj",
+      "msbuildProject": "../ArgonRunnable/ArgonRunnable.csproj"
+    },
+    "ArgonSymbols/1.0.0": {
+      "type": "project",
+      "path": "../ArgonSymbols/ArgonSymbols.csproj",
+      "msbuildProject": "../ArgonSymbols/ArgonSymbols.csproj"
+    },
+    "Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/Models.csproj",
+      "msbuildProject": "../Models/Models.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.0": [
+      "ArgonRunnable >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\smpsm\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Projects\\Argon\\ArgonLanguage\\Argon\\Argon.csproj",
+      "projectName": "Argon",
+      "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\Argon\\Argon.csproj",
+      "packagesPath": "C:\\Users\\smpsm\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\Argon\\ArgonLanguage\\Argon\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\smpsm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "projectReferences": {
+            "D:\\Projects\\Argon\\ArgonLanguage\\ArgonRunnable\\ArgonRunnable.csproj": {
+              "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonRunnable\\ArgonRunnable.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.0": {
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        }
+      }
+    }
+  }
+}

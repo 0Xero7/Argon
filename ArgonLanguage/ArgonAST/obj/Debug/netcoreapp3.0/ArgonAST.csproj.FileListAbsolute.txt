@@ -1,0 +1,16 @@
+D:\Projects\Argon\ArgonLanguage\ArgonAST\obj\Debug\netcoreapp3.0\ArgonAST.csproj.CoreCompileInputs.cache
+D:\Projects\Argon\ArgonLanguage\ArgonAST\obj\Debug\netcoreapp3.0\ArgonAST.AssemblyInfoInputs.cache
+D:\Projects\Argon\ArgonLanguage\ArgonAST\obj\Debug\netcoreapp3.0\ArgonAST.AssemblyInfo.cs
+D:\Projects\Argon\ArgonLanguage\ArgonAST\bin\Debug\netcoreapp3.0\ArgonAST.deps.json
+D:\Projects\Argon\ArgonLanguage\ArgonAST\bin\Debug\netcoreapp3.0\ArgonAST.dll
+D:\Projects\Argon\ArgonLanguage\ArgonAST\bin\Debug\netcoreapp3.0\ArgonAST.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonAST\bin\Debug\netcoreapp3.0\ArgonASTModels.dll
+D:\Projects\Argon\ArgonLanguage\ArgonAST\bin\Debug\netcoreapp3.0\ArgonSymbols.dll
+D:\Projects\Argon\ArgonLanguage\ArgonAST\bin\Debug\netcoreapp3.0\Models.dll
+D:\Projects\Argon\ArgonLanguage\ArgonAST\bin\Debug\netcoreapp3.0\ArgonASTModels.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonAST\bin\Debug\netcoreapp3.0\ArgonSymbols.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonAST\bin\Debug\netcoreapp3.0\Models.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonAST\obj\Debug\netcoreapp3.0\ArgonAST.csprojAssemblyReference.cache
+D:\Projects\Argon\ArgonLanguage\ArgonAST\obj\Debug\netcoreapp3.0\ArgonAST.csproj.CopyComplete
+D:\Projects\Argon\ArgonLanguage\ArgonAST\obj\Debug\netcoreapp3.0\ArgonAST.dll
+D:\Projects\Argon\ArgonLanguage\ArgonAST\obj\Debug\netcoreapp3.0\ArgonAST.pdb
