@@ -7,7 +7,7 @@ namespace ArgonASTModels
 {
     public class ArgonASTAssignment : ArgonASTBase
     {
-        public IValueContainer value;
+        public ValueContainer value;
         public string variable;
     }
 }

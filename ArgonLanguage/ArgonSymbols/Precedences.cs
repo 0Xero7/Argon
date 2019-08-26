@@ -21,6 +21,7 @@ namespace ArgonSymbols
         private static Dictionary<string, int> precedenceDict = new Dictionary<string, int>()
         {
             { "(", -9999 },
+            { "=", -9998 },
             { "+" , 1 },
             { "-" , 1 },
             { "*" , 2 },

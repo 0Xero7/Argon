@@ -1,18 +1,14 @@
-﻿using ArgonASTModels;
-using ArgonASTModels.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ArgonASTModels.Interfaces;
 
-namespace ArgonAST
+namespace ArgonASTModels
 {
-    public class ArgonASTBinaryOperator : ArgonASTBase, IValueContainer
+    public class ArgonASTBinaryOperator : ValueContainer
     {
         public string Operator { get; set; }
-        public IValueContainer left { get; set; }
-        public IValueContainer right { get; set; }
+        public ValueContainer left { get; set; }
+        public ValueContainer right { get; set; }
 
-        public ArgonASTBinaryOperator(string Operator, IValueContainer left, IValueContainer right)
+        public ArgonASTBinaryOperator(string Operator, ValueContainer left, ValueContainer right)
         {
             this.Operator = Operator;
             this.left = left;

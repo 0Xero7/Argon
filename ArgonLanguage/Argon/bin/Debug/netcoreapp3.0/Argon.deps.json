@@ -29,6 +29,15 @@
           "ArgonASTModels.dll": {}
         }
       },
+      "ArgonASTSerializer/1.0.0": {
+        "dependencies": {
+          "ArgonAST": "1.0.0",
+          "ArgonASTModels": "1.0.0"
+        },
+        "runtime": {
+          "ArgonASTSerializer.dll": {}
+        }
+      },
       "ArgonLexer/1.0.0": {
         "dependencies": {
           "ArgonSymbols": "1.0.0",
@@ -41,6 +50,7 @@
       "ArgonRunnable/1.0.0": {
         "dependencies": {
           "ArgonAST": "1.0.0",
+          "ArgonASTSerializer": "1.0.0",
           "ArgonLexer": "1.0.0",
           "Models": "1.0.0"
         },
@@ -72,6 +82,11 @@
       "sha512": ""
     },
     "ArgonASTModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonASTSerializer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

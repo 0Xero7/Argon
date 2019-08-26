@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ArgonASTModels.Interfaces
 {
-    public interface IValueContainer
+    public abstract class ValueContainer : ArgonASTBase
     {
 
     }

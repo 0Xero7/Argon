@@ -27,6 +27,20 @@
           "bin/placeholder/ArgonASTModels.dll": {}
         }
       },
+      "ArgonASTSerializer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "ArgonAST": "1.0.0",
+          "ArgonASTModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ArgonASTSerializer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ArgonASTSerializer.dll": {}
+        }
+      },
       "ArgonLexer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
@@ -46,6 +60,7 @@
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
           "ArgonAST": "1.0.0",
+          "ArgonASTSerializer": "1.0.0",
           "ArgonLexer": "1.0.0",
           "Models": "1.0.0"
         },
@@ -88,6 +103,11 @@
       "type": "project",
       "path": "../ArgonASTModels/ArgonASTModels.csproj",
       "msbuildProject": "../ArgonASTModels/ArgonASTModels.csproj"
+    },
+    "ArgonASTSerializer/1.0.0": {
+      "type": "project",
+      "path": "../ArgonASTSerializer/ArgonASTSerializer.csproj",
+      "msbuildProject": "../ArgonASTSerializer/ArgonASTSerializer.csproj"
     },
     "ArgonLexer/1.0.0": {
       "type": "project",

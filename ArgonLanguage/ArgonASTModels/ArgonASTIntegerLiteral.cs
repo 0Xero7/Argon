@@ -1,6 +1,6 @@
 ﻿namespace ArgonASTModels
 {
-    public class ArgonASTIntegerLiteral : Interfaces.IValueContainer
+    public class ArgonASTIntegerLiteral : Interfaces.ValueContainer
     {
         public int value { get; set; }
 

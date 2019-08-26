@@ -1,0 +1,72 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "ArgonASTSerializer/1.0.0": {
+        "dependencies": {
+          "ArgonAST": "1.0.0",
+          "ArgonASTModels": "1.0.0"
+        },
+        "runtime": {
+          "ArgonASTSerializer.dll": {}
+        }
+      },
+      "ArgonAST/1.0.0": {
+        "dependencies": {
+          "ArgonASTModels": "1.0.0",
+          "ArgonSymbols": "1.0.0",
+          "Models": "1.0.0"
+        },
+        "runtime": {
+          "ArgonAST.dll": {}
+        }
+      },
+      "ArgonASTModels/1.0.0": {
+        "runtime": {
+          "ArgonASTModels.dll": {}
+        }
+      },
+      "ArgonSymbols/1.0.0": {
+        "runtime": {
+          "ArgonSymbols.dll": {}
+        }
+      },
+      "Models/1.0.0": {
+        "runtime": {
+          "Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ArgonASTSerializer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonAST/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonASTModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonSymbols/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

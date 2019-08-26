@@ -30,7 +30,58 @@ namespace ArgonAST
             while (i < arg.Length)
             {
                 var t = arg[i];
-                
+
+                // Function Decl 
+                // <ret-type> <func-name>(<type1> <var-name1>, <type2> <var-name2>,...) { ... }
+                if (t.tokenType == Models.TokenType.Type && arg[i+1].tokenType == Models.TokenType.Identifier && arg[i+2].IsOperator("("))
+                {
+                    var decl = new ArgonASTFunctionDeclaration(t.tokenValue, arg[++i].tokenValue);
+
+                    i += 1;
+
+                    // Read the formal parameters
+                    while (!arg[++i].IsOperator(")"))
+                    {
+                        var type = arg[i].tokenValue;
+                        var name = arg[++i].tokenValue;
+
+                        if (arg[i + 1].IsOperator(","))
+                            ++i;
+
+                        var param = new ArgonASTDeclaration(type, name);
+
+                        decl.FormalParamaters.Add(param);
+                    }
+
+                    // Capture and recursively parse the body of the function
+
+                    // No function body, throw exception
+                    if (!arg[++i].IsOperator("{"))
+                        throw new InvalidProgramException($"Function body doesn't have a '{{'. Found {arg[i].tokenValue}.");
+
+                    startIndex = ++i;
+                    int depth = 1, endIndex = startIndex;
+
+                    while (depth > 0)
+                    {
+                        if (arg[i + 1].IsOperator("{")) depth++;
+                        if (arg[i + 1].IsOperator("}")) depth--;
+
+                        ++i;
+
+                        endIndex++;
+                    }
+
+                    decl.FunctionBody = GenerateAST(arg.Slice(startIndex, endIndex - startIndex));
+
+                    ++i;
+
+                    block.AddChild(decl);
+
+                    continue;
+                }
+
+                // Variable Decl 
                 // <type> <var-name>
                 // <type> <var-name> = <expression>
                 if (t.tokenType == Models.TokenType.Type)
@@ -61,6 +112,8 @@ namespace ArgonAST
                     block.AddChild(new ArgonASTAssignment() { value = expr, variable = decl.VariableName });
 
                     ++i;
+
+                    continue;
                 }
 
 
@@ -79,16 +132,40 @@ namespace ArgonAST
                     block.AddChild(new ArgonASTAssignment() { value = expr, variable = t.tokenValue });
 
                     ++i;
+
+                    continue;
+                }
+
+                // <print> <expression>
+                if (arg[i].IsKeyword("print"))
+                {
+                    startIndex = ++i;
+
+                    // No support for multiple assignments in decls
+                    // The expression is in tokens startIndex to (i - 1), after forthcoming while exits
+                    while (!arg[++i].IsSemicolon()) ;
+
+                    // Parse the expression
+                    var expr = ParseExpression(arg.Slice(startIndex, i - startIndex));
+
+                    block.AddChild(new ArgonASTPrint() { expression = expr });
+
+                    ++i;
+
+                    continue;
                 }
             }
 
             return block;
         }
 
-        public static IValueContainer ParseExpression(Span<Models.Token> arg)
+
+        // See https://en.wikipedia.org/wiki/Shunting-yard_algorithm
+        // Basically, convert from infix to postfix, while creating the parse tree for the expression
+        public static ValueContainer ParseExpression(Span<Models.Token> arg)
         {
             Stack<Models.Token> op_stack = new Stack<Models.Token>();
-            Stack<IValueContainer> terminal_stack = new Stack<IValueContainer>();
+            Stack<ValueContainer> terminal_stack = new Stack<ValueContainer>();
 
             // Initialize with '(' so that no special cases exist
             op_stack.Push(new Models.Token() { tokenValue = "(", tokenType = Models.TokenType.Operator });
@@ -98,7 +175,11 @@ namespace ArgonAST
                 switch (arg[i].tokenType)
                 {
                     case Models.TokenType.Identifier:
+                        terminal_stack.Push(new ArgonASTIdentifier(arg[i].tokenValue));
+                        continue;
                     case Models.TokenType.StringLiteral:
+                        terminal_stack.Push(new ArgonASTStringLiteral(arg[i].tokenValue));
+                        continue;
                     case Models.TokenType.NumberLiteral:
                         terminal_stack.Push(new ArgonASTIntegerLiteral(int.Parse(arg[i].tokenValue)));
                         continue;
@@ -144,7 +225,7 @@ namespace ArgonAST
             return terminal_stack.Pop();
         }
 
-        private static ArgonASTBinaryOperator GetASTOperator(string op, IValueContainer x, IValueContainer y)
+        private static ArgonASTBinaryOperator GetASTOperator(string op, ValueContainer x, ValueContainer y)
         {
             switch (op)
             {

@@ -1,8 +1,6 @@
-﻿using ArgonASTModels;
-
-namespace ArgonAST
+﻿namespace ArgonASTModels
 {
-    public class ArgonASTStringLiteral : ArgonASTBase
+    public class ArgonASTStringLiteral : ArgonASTModels.Interfaces.ValueContainer
     {
         public string value { get; set; }
 

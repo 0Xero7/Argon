@@ -8,9 +8,14 @@ namespace ArgonRunnable
     {
         public static List<Token> GetTokenList(string arg) => ArgonLexer.Lexer.GetTokens(arg);
 
-        public static void GetAST(Span<Models.Token> arg)
+        public static ArgonASTModels.ArgonASTBase GetAST(Span<Models.Token> arg)
         {
-            ArgonAST.ASTBuilder.GenerateAST(arg);
+            return ArgonAST.ASTBuilder.GenerateAST(arg);
+        }
+
+        public static void PrintAST(ArgonASTModels.ArgonASTBase prog)
+        {
+            Console.WriteLine(ArgonASTSerializer.ASTSerializer.SerializeAST(prog));
         }
     }
 }

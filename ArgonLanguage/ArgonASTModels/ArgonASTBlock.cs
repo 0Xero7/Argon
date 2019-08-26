@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ArgonASTModels
 {
-    public class ArgonASTBlock
+    public class ArgonASTBlock : ArgonASTBase
     {
         public List<ArgonASTBase> Children;
 
