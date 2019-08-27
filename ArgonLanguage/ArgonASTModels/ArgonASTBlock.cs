@@ -6,7 +6,7 @@ namespace ArgonASTModels
 {
     public class ArgonASTBlock : ArgonASTBase
     {
-        public List<ArgonASTBase> Children;
+        public List<ArgonASTBase> Children { get; set; }
 
         public ArgonASTBlock()
         {

@@ -33,7 +33,7 @@ namespace ArgonAST
 
                 // Function Decl 
                 // <ret-type> <func-name>(<type1> <var-name1>, <type2> <var-name2>,...) { ... }
-                if (t.tokenType == Models.TokenType.Type && arg[i+1].tokenType == Models.TokenType.Identifier && arg[i+2].IsOperator("("))
+                if (t.tokenType == Models.TokenType.Type && arg[i + 1].tokenType == Models.TokenType.Identifier && arg[i + 2].IsOperator("("))
                 {
                     var decl = new ArgonASTFunctionDeclaration(t.tokenValue, arg[++i].tokenValue);
 
@@ -104,7 +104,7 @@ namespace ArgonAST
 
                     // No support for multiple assignments in decls
                     // The expression is in tokens startIndex to (i - 1), after forthcoming while exits
-                    while (!arg[++i].IsSemicolon());
+                    while (!arg[++i].IsSemicolon()) ;
 
                     // Parse the expression
                     var expr = ParseExpression(arg.Slice(startIndex, i - startIndex));
@@ -118,8 +118,9 @@ namespace ArgonAST
 
 
                 // <var-name> = <expression>
-                if (t.tokenType == Models.TokenType.Identifier && arg[++i].IsOperator("="))
+                if (t.tokenType == Models.TokenType.Identifier && arg[i].IsOperator("="))
                 {
+                    ++i;
                     startIndex = ++i;
 
                     // No support for multiple assignments in decls
@@ -132,6 +133,85 @@ namespace ArgonAST
                     block.AddChild(new ArgonASTAssignment() { value = expr, variable = t.tokenValue });
 
                     ++i;
+
+                    continue;
+                }
+
+                // <if> (<expression>) { ... }
+                // <if> (<expression>) { ... } else { ... }
+                if (arg[i].IsKeyword("if"))
+                {
+                    startIndex = ++i;
+                    if (!arg[i].IsOperator("("))
+                        throw new InvalidProgramException($"Expected a '(' after 'if'. Found ${arg[i].tokenValue}.");
+
+                    var ifBlock = new ArgonASTIf();
+
+                    int depth = 1, endIndex = startIndex;
+                    while (depth > 0)
+                    {
+                        if (arg[i + 1].IsOperator("(")) depth++;
+                        if (arg[i + 1].IsOperator(")")) depth--;
+
+                        ++i;
+
+                        endIndex++;
+                    }
+
+                    var expr = ParseExpression(arg.Slice(startIndex, endIndex - startIndex));
+                    ifBlock.condition = expr;
+
+                    // Goto next symbol after condition ')'
+                    ++i;
+
+                    if (!arg[i].IsOperator("{"))
+                        throw new InvalidProgramException($"Expected a '{{' for enclosing 'if' block. Found {arg[i].tokenValue}.");
+
+                    startIndex = ++i;
+                    depth = 1;
+                    endIndex = startIndex;
+
+                    while (depth > 0)
+                    {
+                        if (arg[i].IsOperator("{")) depth++;
+                        if (arg[i].IsOperator("}")) depth--;
+
+                        ++i;
+
+                        endIndex++;
+                    }
+
+                    ifBlock.trueBlock = GenerateAST(arg.Slice(startIndex, endIndex - startIndex - 1));
+
+                    // Check if EOF before checking for else
+                    //++i;
+                    if (i >= arg.Length) continue;
+
+                    if (arg[i].IsKeyword("else"))
+                    {
+                        ++i;
+
+                        if (!arg[i].IsOperator("{"))
+                            throw new InvalidProgramException($"Expected a '{{' for enclosing 'else' block. Found {arg[i].tokenValue}.");
+
+                        startIndex = ++i;
+                        depth = 1;
+                        endIndex = startIndex;
+
+                        while (depth > 0)
+                        {
+                            if (arg[i].IsOperator("{")) depth++;
+                            if (arg[i].IsOperator("}")) depth--;
+
+                            ++i;
+
+                            endIndex++;
+                        }
+                    }
+
+                    ifBlock.falseBlock = GenerateAST(arg.Slice(startIndex, endIndex - startIndex - 1));
+
+                    block.AddChild(ifBlock);
 
                     continue;
                 }
@@ -154,6 +234,39 @@ namespace ArgonAST
 
                     continue;
                 }
+
+                // <return> <expression>
+                if (arg[i].IsKeyword("return"))
+                {
+                    startIndex = ++i;
+
+                    // No support for multiple assignments in decls
+                    // The expression is in tokens startIndex to (i - 1), after forthcoming while exits
+                    while (!arg[++i].IsSemicolon()) ;
+
+                    // Parse the expression
+                    var expr = ParseExpression(arg.Slice(startIndex, i - startIndex));
+
+                    block.AddChild(new ArgonASTReturn(expr));
+
+                    ++i;
+
+                    continue;
+                }
+
+                // <expression>
+                startIndex = i;
+
+                while (!arg[++i].IsSemicolon()) ;
+
+                // Parse the expression
+                var exp = ParseExpression(arg.Slice(startIndex, i - startIndex));
+
+                block.AddChild(exp);
+
+                ++i;
+
+                continue;
             }
 
             return block;
@@ -186,7 +299,46 @@ namespace ArgonAST
                 }
 
                 if (arg[i].IsOperator("("))
-                { op_stack.Push(arg[i]); continue; }
+                {
+                    // Check if previous token was an identifier, signalling a function call
+                    // <identifier>() -> func call
+                    if (arg[i - 1].tokenType == Models.TokenType.Identifier)
+                    {
+                        // Clear identifier from terminal stack
+                        var functionName = ((ArgonASTIdentifier)terminal_stack.Pop()).VariableName;
+
+                        var fcall = new ArgonASTFunctionCall(functionName);
+
+                        // Parse parameters
+                        int startIndex = ++i, depth = 1, length = 0;
+
+                        while (depth > 0)
+                        {
+                            if (arg[i].IsOperator("(")) depth++;
+                            if (arg[i].IsOperator(")")) depth--;
+
+                            // Parameter delimiter
+                            if ((arg[i].IsOperator(",") && depth == 1) || depth == 0)
+                            {
+                                if (length > 0)
+                                    fcall.parameters.Add(ParseExpression(arg.Slice(startIndex, length)));
+
+                                startIndex = i + 1;
+                                length = -1;
+                            }
+
+                            ++i;
+                            ++length;
+                        }
+
+                        terminal_stack.Push(fcall);
+
+                        --i;
+                    }
+                    else
+                        op_stack.Push(arg[i]);
+                    continue;
+                }
 
                 Models.Token c;
                 if (arg[i].IsOperator(")"))

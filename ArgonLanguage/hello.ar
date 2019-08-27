@@ -1,5 +1,4 @@
 
-void Main()
-{
-	int s = 5;
-}
+void k() { 3; }
+
+void m() { 4; }

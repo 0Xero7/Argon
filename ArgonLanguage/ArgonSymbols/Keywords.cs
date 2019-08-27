@@ -5,7 +5,7 @@ namespace ArgonSymbols
     public static class Keywords
     {
         private static List<string> list = new List<string>()
-            { "print" };
+            { "print" , "return", "if", "else", "for", "while" };
         
         public static bool IsKeyword(string arg) => list.Contains(arg);
     }

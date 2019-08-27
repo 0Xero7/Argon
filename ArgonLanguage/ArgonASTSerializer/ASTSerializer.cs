@@ -8,15 +8,17 @@ namespace ArgonASTSerializer
 {
     public static class ASTSerializer
     {
+        const string tab = "     ";
+
         public static string SerializeAST(ArgonASTBase program)
         {
-            string json = "Program: \n{";
+            string json = "{";
             var block = program as ArgonASTModels.ArgonASTBlock;
 
             foreach (var child in block.Children)
                 json += SerializeBlock(child, 1) + ",";
 
-            return json + "\b \n}";
+            return json + "\b }";
         }
 
         private static string SerializeBlock(ArgonASTBase arg, int indent)
@@ -30,32 +32,104 @@ namespace ArgonASTSerializer
             switch (arg)
             {
                 case ArgonASTDeclaration decl:
-                    response = $"\nDeclaration : \n{{\n\tVariable Name : '{decl.VariableName}',\n\tType : '{decl.Type}'\n}}";
+                    response = $"\"Declaration\" : {{\"Variable Name\" : \"{decl.VariableName}\",\"Type\" : \"{decl.Type}\"}}";
                     break;
+
                 case ArgonASTAssignment ass:
-                    response = $"\nAssignment : \n{{\n\tVariable : '{ass.variable}',\n\tValue : \n\t{{{SerializeBlock(ass.value, indent + 1)}\n\t}}\n}}";
+                    response = $"\"Assignment\" : {{\"Variable\" : \"{ass.variable}\",\"Value\" : {{{SerializeBlock(ass.value, indent)}}}}}";
                     break;
+
                 case ArgonASTIntegerLiteral ilit:
-                    response = $"\nLiteral : \n{{\n\tType : 'int',\n\tValue : '{ilit.value}'\n}}";
+                    response = $"\"Literal\" : {{\"Type\" : \"int\",\"Value\" : \"{ilit.value}\"}}";
                     break;
+
                 case ArgonASTStringLiteral slit:
-                    response = $"\nLiteral : \n{{\n\tType : 'string',\n\tValue : '{slit.value}'\n}}";
+                    response = $"\"Literal\" : {{\"Type\" : \"string\",\"Value\" : \"{slit.value}\"}}";
                     break;
+
                 case ArgonASTPrint print:
-                    response = $"\nPrint Function : \n{{\n\tExpression : \n\t{{\n\t{SerializeBlock(print.expression, indent + 1)}\n\t}}\n}}";
+                    response = $"\"Print Function\" : {{\"Expression\" : {{{SerializeBlock(print.expression, indent + 1)}}}}}";
                     break;
+
                 case ArgonASTBinaryOperator binop:
-                    response = $"\nBinary Operator : \n{{\n\tOperator : '{binop.Operator}',\n\tLeft : \n\t{{\n{SerializeBlock(binop.left, indent)}\n\t}},\n\tRight : \n\t{{\n{SerializeBlock(binop.right, indent)}\n\t}}\n}}";
+                    response = $"\"Binary Operator\" : {{\"Operator\" : \"{binop.Operator}\",\"Left\" : {{{SerializeBlock(binop.left, indent)}}},\"Right\" : {{{SerializeBlock(binop.right, indent)}}}}}";
                     break;
+
                 case ArgonASTIdentifier id:
-                    response = $"\nIdentifier : \n{{\n\tName : '{id.VariableName}'\n}}";
+                    response = $"\"Identifier\" : {{\"Name\" : \"{id.VariableName}\"}}";
                     break;
+
+                case ArgonASTReturn ret:
+                    response = $"\"Function Return\" : {{\"Expression\" : {{{SerializeBlock(ret.expression, indent)}}}}}";
+                    break;
+
+                case ArgonASTIf iff:
+                    var bdy = "";
+                    foreach (var x in iff.trueBlock.Children)
+                        bdy += SerializeBlock(x, indent + 1) + ",";
+                    bdy += "\b ";
+
+                    var fbdy = "";
+                    if (iff.falseBlock != null)
+                    {
+                        foreach (var x in iff.falseBlock.Children)
+                            fbdy += SerializeBlock(x, indent) + ",";
+                        fbdy += "\b ";
+                    }
+
+                    response = $"\"If\" : " +
+                         $"{{\"Condition\" : " +
+                         $"{{{SerializeBlock(iff.condition, indent)}" +
+                         $"}}," +
+                         $"\"True Block\" : " +
+                         $"{{{bdy}}}," +
+                         $"\"False Block\" : " +
+                         $"{{{fbdy}}},}}";
+                    break;
+
                 case ArgonASTFunctionDeclaration fdec:
-                    response = $"\nFunction Declaration : \n{{\n\tName : '{fdec.FunctionName}'\n}}";
+                    var body = "";
+                    foreach (var x in fdec.FunctionBody.Children)
+                        body += SerializeBlock(x, indent + 1) + ",";
+                    body += "\b ";
+
+                    var parameters = "";
+                    foreach (var x in fdec.FormalParamaters)
+                    {
+                        parameters += $"{{\"Parameter Name\" : \"{x.VariableName}\",\"Type\" : \"{x.Type}\"}},";
+                    }
+                    if (fdec.FormalParamaters.Count > 0)
+                        parameters += "\b ";
+
+
+                    response = $"\"Function Declaration\" : " +
+                               $"{{\"Name\" : \"{fdec.FunctionName}\"," +
+                               $"\"Return type\" : \"{fdec.ReturnType}\"," +
+                               $"\"Parameters\" : [{parameters}]," +
+                               $"\"Body\" : " +
+                               $"{{" +
+                               $"{body}" +
+                               $"}}" +
+                               $"}}";
+                    break;
+
+                case ArgonASTFunctionCall fcall:
+                    var args = "";
+                    foreach (var x in fcall.parameters)
+                    {
+                        var ser = $"{{{SerializeBlock(x, 0)}}}";
+                        args += $"{ser},";
+                    }
+                    if (fcall.parameters.Count > 0)
+                        args += "\b ";
+
+                    response = $"\"Function Call\" : " +
+                               $"{{ \"Function Name\" : \"{fcall.FunctionName}\"," +
+                               $"\"Parameters\" : [{args}]}}";
                     break;
             }
-            
-            return response.Replace("\n", "\n"+wp);
+
+            return response;
         }
     }
 }
