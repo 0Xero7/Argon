@@ -141,28 +141,29 @@ namespace ArgonAST
                 // <if> (<expression>) { ... } else { ... }
                 if (arg[i].IsKeyword("if"))
                 {
-                    startIndex = ++i;
-                    if (!arg[i].IsOperator("("))
+                    if (!arg[++i].IsOperator("("))
                         throw new InvalidProgramException($"Expected a '(' after 'if'. Found ${arg[i].tokenValue}.");
+
+                    startIndex = ++i;
 
                     var ifBlock = new ArgonASTIf();
 
                     int depth = 1, endIndex = startIndex;
                     while (depth > 0)
                     {
-                        if (arg[i + 1].IsOperator("(")) depth++;
-                        if (arg[i + 1].IsOperator(")")) depth--;
+                        if (arg[i].IsOperator("(")) depth++;
+                        if (arg[i].IsOperator(")")) depth--;
 
                         ++i;
 
                         endIndex++;
                     }
 
-                    var expr = ParseExpression(arg.Slice(startIndex, endIndex - startIndex));
+                    var expr = ParseExpression(arg.Slice(startIndex, endIndex - startIndex - 1));
                     ifBlock.condition = expr;
 
                     // Goto next symbol after condition ')'
-                    ++i;
+                   // ++i;
 
                     if (!arg[i].IsOperator("{"))
                         throw new InvalidProgramException($"Expected a '{{' for enclosing 'if' block. Found {arg[i].tokenValue}.");
@@ -185,7 +186,11 @@ namespace ArgonAST
 
                     // Check if EOF before checking for else
                     //++i;
-                    if (i >= arg.Length) continue;
+                    if (i >= arg.Length)
+                    {
+                        block.AddChild(ifBlock);
+                        continue;
+                    }
 
                     if (arg[i].IsKeyword("else"))
                     {
@@ -385,6 +390,7 @@ namespace ArgonAST
                 case "-":
                 case "*":
                 case "/":
+                case "==":
                     // Switch the positions of left and right. 
                     // If not done, x - y shows up at y - x
                     return new ArgonASTBinaryOperator(op, y, x);

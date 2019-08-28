@@ -84,7 +84,7 @@ namespace ArgonASTSerializer
                          $"\"True Block\" : " +
                          $"{{{bdy}}}," +
                          $"\"False Block\" : " +
-                         $"{{{fbdy}}},}}";
+                         $"{{{fbdy}}}}}";
                     break;
 
                 case ArgonASTFunctionDeclaration fdec:
