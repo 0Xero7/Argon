@@ -1,0 +1,12 @@
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\bin\Debug\netcoreapp3.0\ArgonCodeGen.deps.json
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\bin\Debug\netcoreapp3.0\ArgonCodeGen.dll
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\bin\Debug\netcoreapp3.0\ArgonASTModels.dll
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\bin\Debug\netcoreapp3.0\ArgonASTModels.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\obj\Debug\netcoreapp3.0\ArgonCodeGen.csprojAssemblyReference.cache
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\obj\Debug\netcoreapp3.0\ArgonCodeGen.csproj.CoreCompileInputs.cache
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\obj\Debug\netcoreapp3.0\ArgonCodeGen.AssemblyInfoInputs.cache
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\obj\Debug\netcoreapp3.0\ArgonCodeGen.AssemblyInfo.cs
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\obj\Debug\netcoreapp3.0\ArgonCodeGen.csproj.CopyComplete
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\bin\Debug\netcoreapp3.0\ArgonCodeGen.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\obj\Debug\netcoreapp3.0\ArgonCodeGen.dll
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\obj\Debug\netcoreapp3.0\ArgonCodeGen.pdb

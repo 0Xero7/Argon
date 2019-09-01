@@ -1,16 +1,7 @@
 
-void main()
+int main()
 {
-	int result = fib(5);
-	Write(result);
-}
+	printf("Hello World");
 
-int fib(int arg)
-{
-	if (arg == 0)
-	{ return 0; }
-	if (arg == 1)
-	{ return 1; }
-
-	return fib(arg - 1) + fib(arg - 2);
+	return 0;
 }

@@ -189,6 +189,79 @@
         }
       }
     },
+    "D:\\Projects\\Argon\\ArgonLanguage\\ArgonCodeGen\\ArgonCodeGen.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonCodeGen\\ArgonCodeGen.csproj",
+        "projectName": "ArgonCodeGen",
+        "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonCodeGen\\ArgonCodeGen.csproj",
+        "packagesPath": "C:\\Users\\smpsm\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonCodeGen\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\smpsm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTModels\\ArgonASTModels.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTModels\\ArgonASTModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "LLVMSharp": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0-preview7-27912-14, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          }
+        }
+      }
+    },
     "D:\\Projects\\Argon\\ArgonLanguage\\ArgonLexer\\ArgonLexer.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -285,6 +358,9 @@
               },
               "D:\\Projects\\Argon\\ArgonLanguage\\ArgonAST\\ArgonAST.csproj": {
                 "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonAST\\ArgonAST.csproj"
+              },
+              "D:\\Projects\\Argon\\ArgonLanguage\\ArgonCodeGen\\ArgonCodeGen.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonCodeGen\\ArgonCodeGen.csproj"
               },
               "D:\\Projects\\Argon\\ArgonLanguage\\ArgonLexer\\ArgonLexer.csproj": {
                 "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonLexer\\ArgonLexer.csproj"

@@ -6,8 +6,8 @@ namespace ArgonASTModels
 {
     public class ArgonASTReturn : ArgonASTBase
     {
-        public Interfaces.ValueContainer expression;
-        public ArgonASTReturn(Interfaces.ValueContainer expression)
+        public ValueTypes.ValueContainer expression;
+        public ArgonASTReturn(ValueTypes.ValueContainer expression)
         {
             this.expression = expression;
         }

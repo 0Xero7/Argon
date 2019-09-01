@@ -20,3 +20,5 @@ D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonAST.p
 D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonASTModels.pdb
 D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonASTSerializer.dll
 D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonASTSerializer.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonCodeGen.dll
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonCodeGen.pdb

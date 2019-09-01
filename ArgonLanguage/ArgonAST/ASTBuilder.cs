@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 using ArgonASTModels;
-using ArgonASTModels.Interfaces;
+using ArgonASTModels.ValueTypes;
 using static ArgonAST.ASTBuilderUtilities;
 
 namespace ArgonAST
@@ -118,7 +118,7 @@ namespace ArgonAST
 
 
                 // <var-name> = <expression>
-                if (t.tokenType == Models.TokenType.Identifier && arg[i].IsOperator("="))
+                if (t.tokenType == Models.TokenType.Identifier && arg[i+1].IsOperator("="))
                 {
                     ++i;
                     startIndex = ++i;
@@ -391,6 +391,11 @@ namespace ArgonAST
                 case "*":
                 case "/":
                 case "==":
+                case "<=":
+                case ">=":
+                case "!=":
+                case "<":
+                case ">":
                     // Switch the positions of left and right. 
                     // If not done, x - y shows up at y - x
                     return new ArgonASTBinaryOperator(op, y, x);

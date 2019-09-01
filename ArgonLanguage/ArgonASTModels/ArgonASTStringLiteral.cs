@@ -1,6 +1,6 @@
 ﻿namespace ArgonASTModels
 {
-    public class ArgonASTStringLiteral : ArgonASTModels.Interfaces.ValueContainer
+    public class ArgonASTStringLiteral : ValueTypes.Terminal
     {
         public string value { get; set; }
 

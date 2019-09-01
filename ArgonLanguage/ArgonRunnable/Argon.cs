@@ -17,5 +17,10 @@ namespace ArgonRunnable
         {
             Console.WriteLine(ArgonASTSerializer.ASTSerializer.SerializeAST(prog));
         }
+
+        public static void GenerateIR(ArgonASTModels.ArgonASTBase prog)
+        {
+            ArgonCodeGen.ArgonCodeGen.GetGeneratedCode(prog);
+        }
     }
 }

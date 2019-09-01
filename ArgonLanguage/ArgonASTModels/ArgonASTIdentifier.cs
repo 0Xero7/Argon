@@ -1,7 +1,7 @@
 ﻿
 namespace ArgonASTModels
 {
-    public class ArgonASTIdentifier : Interfaces.ValueContainer
+    public class ArgonASTIdentifier : ValueTypes.Terminal
     {
         public ArgonASTIdentifier(string varName)
         {

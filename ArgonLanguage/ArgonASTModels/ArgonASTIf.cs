@@ -6,7 +6,7 @@ namespace ArgonASTModels
 {
     public class ArgonASTIf : ArgonASTBase
     {
-        public Interfaces.ValueContainer condition;
+        public ValueTypes.ValueContainer condition;
         public ArgonASTBlock trueBlock;
         public ArgonASTBlock falseBlock;
     }

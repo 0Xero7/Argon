@@ -1,0 +1,14 @@
+
+def main() ret void
+{
+	val result = fib(5);
+	WriteLine(result);
+}
+
+def fib(arg as int) ret int
+{
+	if (arg in set {0, 1})
+		return arg;
+
+	return fib(arg - 1) + fib(arg - 2);
+}

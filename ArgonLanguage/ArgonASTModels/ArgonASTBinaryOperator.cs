@@ -1,4 +1,4 @@
-﻿using ArgonASTModels.Interfaces;
+﻿using ArgonASTModels.ValueTypes;
 
 namespace ArgonASTModels
 {

@@ -19,7 +19,11 @@ namespace Argon
 
             var s = ArgonRunnable.Argon.GetAST(list);
 
+            Console.WriteLine("\n\n\n");
             ArgonRunnable.Argon.PrintAST(s);
+
+            Console.WriteLine("\n\n\n");
+            ArgonRunnable.Argon.GenerateIR(s);
         }
     }
 }

@@ -25,3 +25,10 @@ D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\ArgonAST.pdb
 D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\ArgonASTModels.pdb
 D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\ArgonASTSerializer.dll
 D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\ArgonASTSerializer.pdb
+D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\LLVMSharp.dll
+D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\runtimes\linux-x64\native\libLLVM.so
+D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\runtimes\osx\native\libLLVM.dylib
+D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\runtimes\win-x64\native\libLLVM.dll
+D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\runtimes\win-x86\native\libLLVM.dll
+D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\ArgonCodeGen.dll
+D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\ArgonCodeGen.pdb

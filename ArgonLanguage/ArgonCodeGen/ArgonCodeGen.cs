@@ -2,13 +2,183 @@
 using System.Collections.Generic;
 using System.Text;
 
+using LLVMSharp;
+using static LLVMSharp.LLVM;
+using ArgonASTModels;
+using ArgonASTModels.ValueTypes;
+
+using static ArgonCodeGen.SymbolsTable;
+
 namespace ArgonCodeGen
 {
     public static class ArgonCodeGen
     {
-        public static void GetGeneratedCode(ArgonASTModels.ArgonASTBase arg)
-        {
+        private static LLVMValueRef ConstIntZero = LLVM.ConstInt(Int32Type(), 0, true);
 
+        public static void GetGeneratedCode(ArgonASTBase arg)
+        {
+            var context = ContextCreate();
+            var module = LLVM.ModuleCreateWithNameInContext("top", context);
+            var builder = LLVM.CreateBuilderInContext(context);
+
+            var block = arg as ArgonASTBlock;
+
+            // Printf
+            var printfPType = new LLVMTypeRef[1] { PointerType(Int8Type(), 0) };
+            var printfFType = FunctionType(Int32Type(), printfPType, true);
+            var printfFunction = LLVM.AddFunction(module, "printf", printfFType);
+
+            SymbolsTable.Functions.Add("printf", ("int", printfFunction));
+
+            // Forward Declare Functions
+            foreach (var v in block.Children)
+            {
+                switch (v)
+                {
+                    case ArgonASTFunctionDeclaration f:
+                        var p = new LLVMTypeRef[f.FormalParamaters.Count];
+                        int i = 0;
+                        foreach (var vx in f.FormalParamaters)
+                            p[i++] = AST2LLVMTypes[vx.Type];
+
+                        var x = LLVM.FunctionType(AST2LLVMTypes[f.ReturnType], p, false);
+
+                        var fn = LLVM.AddFunction(module, f.FunctionName, x);
+
+                        SymbolsTable.Functions.Add(f.FunctionName, (f.ReturnType, fn));
+                        break;
+                }
+            }
+
+            foreach (var v in block.Children)
+            {
+                switch (v)
+                {
+                    case ArgonASTFunctionDeclaration fdcl:
+                        GIRFuncDecl(fdcl, module, builder);
+                        break;
+                }
+            }
+
+            LLVM.DumpModule(module);
+        }
+
+        private static void GIRFuncDecl(ArgonASTFunctionDeclaration f, LLVMModuleRef m, LLVMBuilderRef b)
+        {
+            var bb = AppendBasicBlock(SymbolsTable.Functions[f.FunctionName].vref, $"entry_{f.FunctionName}");
+
+            var parameters = SymbolsTable.Functions[f.FunctionName].vref.GetParams();
+            int ix = 0;
+            foreach (var x in parameters)
+                SymbolsTable.Variables.Add(f.FormalParamaters[ix].VariableName, (f.FormalParamaters[ix++].Type, x));
+
+            PositionBuilderAtEnd(b, bb);
+
+            foreach (var t in f.FunctionBody.Children)
+            {
+                switch (t)
+                {
+                    case ArgonASTDeclaration decl:
+                        var vb = BuildAlloca(b, AST2LLVMTypes[decl.Type], "");
+                        Variables.Add(decl.VariableName, (decl.Type, vb));
+                        break;
+
+                    case ArgonASTAssignment ass:
+
+                        switch (Variables[ass.variable].type)
+                        {
+                            case "int":
+                                var h = GIRValueType(ass.value, m, b);
+                                BuildStore(b, h, Variables[ass.variable].vref);
+                                break;
+
+                            case "string":
+                                var hs = GIRValueType(ass.value, m, b);
+                                BuildStore(b, hs, Variables[ass.variable].vref);
+                                break;
+                        }
+
+                        break;
+
+                    case ArgonASTFunctionCall call:
+
+                        var p = new LLVMValueRef[call.parameters.Count];
+                        int i = 0;
+                        foreach (var x in call.parameters)
+                        {
+                            // Load the identifier before using it
+                            if (x is ArgonASTIdentifier str)
+                                p[i++] = BuildLoad(b, GIRValueType(x, m, b), "");
+                            else
+                                p[i++] = GIRValueType(x, m, b);
+                        }
+
+                        LLVM.BuildCall(b, SymbolsTable.Functions[call.FunctionName].vref, p, "");
+
+                        break;
+
+                    case ArgonASTReturn ret:
+
+                        var rp = ret.expression;
+
+                        LLVM.BuildRet(b, GIRValueType(rp, m, b));
+
+                        break;
+                }
+            }
+        }
+
+        public static LLVMValueRef GIRValueType(ArgonASTModels.ValueTypes.ValueContainer vc, LLVMModuleRef m, LLVMBuilderRef b)
+        {
+            if (vc is ArgonASTBinaryOperator op)
+                return GIRBinOp(op, m, b);
+            if (vc is Terminal t)
+                return GetTerminalIR(t, m, b);
+
+            throw new NotImplementedException($"Unknown ValueContainer type!");
+        }
+
+        public static LLVMValueRef GIRBinOp(ArgonASTBinaryOperator op, LLVMModuleRef m, LLVMBuilderRef b)
+        {
+            LLVMValueRef left = ConstIntZero, right = ConstIntZero;
+            if (op.left is ArgonASTModels.ValueTypes.Terminal l)
+                left = GetTerminalIR(l, m, b);
+            if (op.left is ArgonASTModels.ArgonASTBinaryOperator ol)
+                left = GIRBinOp(ol, m, b);
+
+            if (op.right is ArgonASTModels.ValueTypes.Terminal r)
+                right = GetTerminalIR(r, m, b);
+            if (op.right is ArgonASTModels.ArgonASTBinaryOperator or)
+                right = GIRBinOp(or, m, b);
+
+            switch (op.Operator)
+            {
+                case "+":
+                    return BuildAdd(b, left, right, "");
+                case "-":
+                    return BuildSub(b, left, right, "");
+                case "*":
+                    return BuildMul(b, left, right, "");
+                case "/":
+                    return BuildSDiv(b, left, right, "");
+            }
+
+            throw new NotImplementedException($"Binary Operator type {op.Operator} not implemented for CodeGen.");
+        }
+
+        private static LLVMValueRef GetTerminalIR(ArgonASTModels.ValueTypes.Terminal t, LLVMModuleRef m, LLVMBuilderRef b)
+        {
+            switch (t)
+            {
+                case ArgonASTIntegerLiteral i:
+                    return LLVM.ConstInt(Int32Type(), (ulong)i.value, true);
+                case ArgonASTStringLiteral s:
+                    return LLVM.BuildGlobalStringPtr(b, s.value, "");
+                case ArgonASTIdentifier id:
+                    return SymbolsTable.Variables[id.VariableName].vref;
+            }
+
+            throw new NotImplementedException($"Literal type {t.GetType().Name} not implemented for CodeGen.");
         }
     }
 }
