@@ -118,7 +118,7 @@ namespace ArgonAST
 
 
                 // <var-name> = <expression>
-                if (t.tokenType == Models.TokenType.Identifier && arg[i+1].IsOperator("="))
+                if (t.tokenType == Models.TokenType.Identifier && arg[i + 1].IsOperator("="))
                 {
                     ++i;
                     startIndex = ++i;
@@ -163,7 +163,7 @@ namespace ArgonAST
                     ifBlock.condition = expr;
 
                     // Goto next symbol after condition ')'
-                   // ++i;
+                    // ++i;
 
                     if (!arg[i].IsOperator("{"))
                         throw new InvalidProgramException($"Expected a '{{' for enclosing 'if' block. Found {arg[i].tokenValue}.");
@@ -212,13 +212,61 @@ namespace ArgonAST
 
                             endIndex++;
                         }
+
+                        ifBlock.falseBlock = GenerateAST(arg.Slice(startIndex, endIndex - startIndex - 1));
                     }
 
-                    ifBlock.falseBlock = GenerateAST(arg.Slice(startIndex, endIndex - startIndex - 1));
 
                     block.AddChild(ifBlock);
 
                     continue;
+                }
+
+                // <while> (<expr>) { ... }
+                if (arg[i].IsKeyword("while"))
+                {
+                    if (!arg[++i].IsOperator("("))
+                        throw new InvalidProgramException($"Expected a '(' after 'while'. Found ${arg[i].tokenValue}.");
+
+                    startIndex = ++i;
+
+                    int depth = 1, endIndex = startIndex;
+                    while (depth > 0)
+                    {
+                        if (arg[i].IsOperator("(")) depth++;
+                        if (arg[i].IsOperator(")")) depth--;
+
+                        ++i;
+
+                        endIndex++;
+                    }
+
+                    var expr = ParseExpression(arg.Slice(startIndex, endIndex - startIndex - 1));
+                    var whileBlock = new ArgonASTWhile(expr);
+
+                    // Goto next symbol after condition ')'
+                    // ++i;
+
+                    if (!arg[i].IsOperator("{"))
+                        throw new InvalidProgramException($"Expected a '{{' for enclosing 'if' block. Found {arg[i].tokenValue}.");
+
+                    startIndex = ++i;
+                    depth = 1;
+                    endIndex = startIndex;
+
+                    while (depth > 0)
+                    {
+                        if (arg[i].IsOperator("{")) depth++;
+                        if (arg[i].IsOperator("}")) depth--;
+
+                        ++i;
+
+                        endIndex++;
+                    }
+
+                    whileBlock.loopBlock = GenerateAST(arg.Slice(startIndex, endIndex - startIndex - 1));
+
+                    block.AddChild(whileBlock);
                 }
 
                 // <print> <expression>

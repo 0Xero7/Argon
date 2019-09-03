@@ -16,7 +16,8 @@ namespace ArgonCodeGen
             { "string", PointerType(Int8Type(), 0) }
         };
 
-        public static Dictionary<string, (string type, LLVMSharp.LLVMValueRef vref)> Variables = new Dictionary<string, (string type, LLVMSharp.LLVMValueRef vref)>();
+        public static Dictionary<string, (string type, LLVMSharp.LLVMValueRef vref, bool IsPtr)> Variables = 
+            new Dictionary<string, (string type, LLVMSharp.LLVMValueRef vref, bool IsPtr)>();
 
         public static Dictionary<string, (string type, LLVMSharp.LLVMValueRef vref)> Functions 
             = new Dictionary<string, (string type, LLVMSharp.LLVMValueRef vref)>();
