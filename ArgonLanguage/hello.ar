@@ -1,42 +1,21 @@
 
-int main()
-{	
-	int i = 0;
-	int iterations = 20;
-
-	while (i < iterations)
-	{
-		printf("%d", fib(i));
-		if (i != (iterations - 1))
-		{
-			printf(", ");
-		}
-
-		i = i + 1;
-	}
-
-	return 0;
-}
-
 int fib(int arg)
 {
-	int response = 0;
-
 	if (arg == 0)
 	{
-		response = 0;
+		return arg;
 	}
 	else
 	{
 		if (arg == 1)
 		{
-			response = 1;
+			return 1;
 		}
 		else
 		{
-			response = fib(arg - 1) + fib(arg - 2);
+			return fib(arg - 1) + fib(arg - 2);
 		}
-	}
 
-	return response;
+		printf("ui");
+	}
 }

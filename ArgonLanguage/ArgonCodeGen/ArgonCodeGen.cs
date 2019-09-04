@@ -15,8 +15,8 @@ namespace ArgonCodeGen
     {
         private static LLVMValueRef ConstIntZero = LLVM.ConstInt(Int32Type(), 0, true);
 
-        //private static LLVMValueRef thisFuncRetVal = ConstIntZero;
-        //private static LLVMBasicBlockRef thisFuncRetBlock;
+        private static LLVMValueRef thisFuncRetVal = ConstIntZero;
+        private static LLVMBasicBlockRef thisFuncRetBlock;
 
         public static void GetGeneratedCode(ArgonASTBase arg)
         {
@@ -110,9 +110,9 @@ namespace ArgonCodeGen
 
                     case ArgonASTReturn ret:
                         var rp = ret.expression;
-                        BuildRet(b, GIRValueType(rp, m, b));
-                        //BuildStore(b, GIRValueType(rp, m, b), thisFuncRetVal);
-                        //BuildBr(b, thisFuncRetBlock);
+                        //BuildRet(b, GIRValueType(rp, m, b));
+                        BuildStore(b, GIRValueType(rp, m, b), thisFuncRetVal);
+                        BuildBr(b, thisFuncRetBlock);
                         break;
                 }
             }
@@ -123,30 +123,28 @@ namespace ArgonCodeGen
             LLVMValueRef returnSt = ConstIntZero, retValue = ConstIntZero;
 
             var bb = AppendBasicBlock(SymbolsTable.Functions[f.FunctionName].vref, "");
-            //var endbb = AppendBasicBlock(SymbolsTable.Functions[f.FunctionName].vref, "");
-
-            GetLastBasicBlock(SymbolsTable.Functions[f.FunctionName].vref);
+            var endbb = AppendBasicBlock(SymbolsTable.Functions[f.FunctionName].vref, "");
 
             if (f.ReturnType != "void")
             {
                 PositionBuilderAtEnd(b, bb);
                 retValue = LLVM.BuildAlloca(b, SymbolsTable.AST2LLVMTypes[f.ReturnType], "");
 
-                //PositionBuilderAtEnd(b, endbb);
-                //returnSt = BuildRet(b, BuildLoad(b, retValue, ""));
+                PositionBuilderAtEnd(b, endbb);
+                returnSt = BuildRet(b, BuildLoad(b, retValue, ""));
 
                 PositionBuilderAtEnd(b, bb);
             }
             else
             {
-                //PositionBuilderAtEnd(b, endbb);
-                //BuildRetVoid(b);
+                PositionBuilderAtEnd(b, endbb);
+                BuildRetVoid(b);
 
                 PositionBuilderAtEnd(b, bb);
             }
 
-            //thisFuncRetBlock = endbb;
-            //thisFuncRetVal = returnSt;
+            thisFuncRetBlock = endbb;
+            thisFuncRetVal = retValue;
 
             var parameters = SymbolsTable.Functions[f.FunctionName].vref.GetParams();
             int ix = 0;
@@ -155,6 +153,13 @@ namespace ArgonCodeGen
 
 
             GIRBlock(f.FunctionBody, m, b, SymbolsTable.Functions[f.FunctionName].vref, bb);
+
+            var sxx = GetLastInstruction(GetLastBasicBlock(SymbolsTable.Functions[f.FunctionName].vref).GetPreviousBasicBlock());
+            if (!LLVM.IsABranchInst(sxx).ToString().Trim().StartsWith("br"))
+            {
+                PositionBuilderAtEnd(b, GetLastBasicBlock(SymbolsTable.Functions[f.FunctionName].vref).GetPreviousBasicBlock());
+                BuildBr(b, endbb);
+            }
 
             ////var list = GetBasicBlocks(SymbolsTable.Functions[f.FunctionName].vref);
             //PositionBuilderAtEnd(b, GetLastBasicBlock(SymbolsTable.Functions[f.FunctionName].vref));
@@ -167,9 +172,9 @@ namespace ArgonCodeGen
             LLVMBasicBlockRef nextBlock = thisBlock.GetNextBasicBlock();
             var cnd = GIRValueType(iff.condition, m, b);
 
-            var thenBlock = thisBlock.InsertBasicBlock("");
-            var mergeBlock = thisBlock.InsertBasicBlock("");
-            var elseBlock = iff.falseBlock != null ? thisBlock.InsertBasicBlock("") : mergeBlock;
+            var thenBlock = thisBlock.InsertBasicBlock("then");
+            var mergeBlock = thisBlock.InsertBasicBlock("merge");
+            var elseBlock = iff.falseBlock != null ? thisBlock.InsertBasicBlock("else") : mergeBlock;
 
             thenBlock.MoveBasicBlockAfter(thisBlock);
             if (iff.falseBlock != null)
@@ -180,13 +185,24 @@ namespace ArgonCodeGen
 
             PositionBuilderAtEnd(b, thenBlock);
             GIRBlock(iff.trueBlock, m, b, fn, thenBlock);
-            BuildBr(b, mergeBlock);
+
+            var sxx = GetLastInstruction(thenBlock);
+            if (!LLVM.IsABranchInst(sxx).ToString().Trim().StartsWith("br"))
+            {
+                BuildBr(b, mergeBlock);
+            }
 
             if (iff.falseBlock != null)
             {
                 PositionBuilderAtEnd(b, elseBlock);
                 GIRBlock(iff.falseBlock, m, b, fn, elseBlock);
-                BuildBr(b, mergeBlock);
+
+                var syy = GetLastInstruction(elseBlock);
+                Console.WriteLine(syy);
+                //if (!syy.ToString().Trim().StartsWith("br"))
+                //{
+                //    BuildBr(b, mergeBlock);
+                //}
             }
 
             PositionBuilderAtEnd(b, mergeBlock);
