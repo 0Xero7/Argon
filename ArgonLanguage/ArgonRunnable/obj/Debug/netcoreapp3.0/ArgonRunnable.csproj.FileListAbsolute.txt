@@ -22,3 +22,7 @@ D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonASTSe
 D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonASTSerializer.pdb
 D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonCodeGen.dll
 D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonCodeGen.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonBranchAnalyzer.dll
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonBranchAnalyzer.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonASTSanitizer.dll
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonASTSanitizer.pdb

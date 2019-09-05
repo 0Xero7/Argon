@@ -438,6 +438,7 @@ namespace ArgonAST
                 case "-":
                 case "*":
                 case "/":
+                case "%":
                 case "==":
                 case "<=":
                 case ">=":

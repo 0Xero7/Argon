@@ -18,6 +18,7 @@ namespace Argon
                 Console.WriteLine($"{x.lineNumber:0000}  [{x.tokenType}]\t\t{x.tokenValue}");
 
             var s = ArgonRunnable.Argon.GetAST(list);
+            ArgonRunnable.Argon.SanitizeAST(s);
 
             Console.WriteLine("\n\n\n");
             ArgonRunnable.Argon.PrintAST(s);

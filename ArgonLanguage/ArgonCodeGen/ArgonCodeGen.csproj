@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ArgonASTModels\ArgonASTModels.csproj" />
+    <ProjectReference Include="..\ArgonBranchAnalyzer\ArgonBranchAnalyzer.csproj" />
   </ItemGroup>
 
 </Project>

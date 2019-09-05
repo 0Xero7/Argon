@@ -1,21 +1,12 @@
 
 int fib(int arg)
 {
-	if (arg == 0)
+	if (arg < 2)
 	{
 		return arg;
-	}
-	else
-	{
-		if (arg == 1)
-		{
-			return 1;
-		}
-		else
-		{
-			return fib(arg - 1) + fib(arg - 2);
-		}
 
-		printf("ui");
+		printf("xxx");
 	}
+
+	return fib(arg - 1) + fib(arg - 2);
 }

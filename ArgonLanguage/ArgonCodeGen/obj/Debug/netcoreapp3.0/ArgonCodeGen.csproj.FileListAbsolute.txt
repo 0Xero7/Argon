@@ -10,3 +10,11 @@ D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\obj\Debug\netcoreapp3.0\ArgonCodeGe
 D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\bin\Debug\netcoreapp3.0\ArgonCodeGen.pdb
 D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\obj\Debug\netcoreapp3.0\ArgonCodeGen.dll
 D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\obj\Debug\netcoreapp3.0\ArgonCodeGen.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\bin\Debug\netcoreapp3.0\ArgonAST.dll
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\bin\Debug\netcoreapp3.0\ArgonBranchAnalyzer.dll
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\bin\Debug\netcoreapp3.0\ArgonSymbols.dll
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\bin\Debug\netcoreapp3.0\Models.dll
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\bin\Debug\netcoreapp3.0\ArgonBranchAnalyzer.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\bin\Debug\netcoreapp3.0\ArgonAST.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\bin\Debug\netcoreapp3.0\ArgonSymbols.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonCodeGen\bin\Debug\netcoreapp3.0\Models.pdb

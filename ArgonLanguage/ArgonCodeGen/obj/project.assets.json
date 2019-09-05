@@ -1236,6 +1236,21 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "ArgonAST/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "ArgonASTModels": "1.0.0",
+          "ArgonSymbols": "1.0.0",
+          "Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ArgonAST.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ArgonAST.dll": {}
+        }
+      },
       "ArgonASTModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
@@ -1244,6 +1259,41 @@
         },
         "runtime": {
           "bin/placeholder/ArgonASTModels.dll": {}
+        }
+      },
+      "ArgonBranchAnalyzer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "ArgonAST": "1.0.0",
+          "ArgonASTModels": "1.0.0",
+          "ArgonSymbols": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ArgonBranchAnalyzer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ArgonBranchAnalyzer.dll": {}
+        }
+      },
+      "ArgonSymbols/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/ArgonSymbols.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ArgonSymbols.dll": {}
+        }
+      },
+      "Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.dll": {}
         }
       }
     }
@@ -4562,15 +4612,36 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "ArgonAST/1.0.0": {
+      "type": "project",
+      "path": "../ArgonAST/ArgonAST.csproj",
+      "msbuildProject": "../ArgonAST/ArgonAST.csproj"
+    },
     "ArgonASTModels/1.0.0": {
       "type": "project",
       "path": "../ArgonASTModels/ArgonASTModels.csproj",
       "msbuildProject": "../ArgonASTModels/ArgonASTModels.csproj"
+    },
+    "ArgonBranchAnalyzer/1.0.0": {
+      "type": "project",
+      "path": "../ArgonBranchAnalyzer/ArgonBranchAnalyzer.csproj",
+      "msbuildProject": "../ArgonBranchAnalyzer/ArgonBranchAnalyzer.csproj"
+    },
+    "ArgonSymbols/1.0.0": {
+      "type": "project",
+      "path": "../ArgonSymbols/ArgonSymbols.csproj",
+      "msbuildProject": "../ArgonSymbols/ArgonSymbols.csproj"
+    },
+    "Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/Models.csproj",
+      "msbuildProject": "../Models/Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "ArgonASTModels >= 1.0.0",
+      "ArgonBranchAnalyzer >= 1.0.0",
       "LLVMSharp >= 5.0.0",
       "Microsoft.NETCore.App >= 3.0.0-preview7-27912-14"
     ]
@@ -4610,6 +4681,9 @@
           "projectReferences": {
             "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTModels\\ArgonASTModels.csproj": {
               "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTModels\\ArgonASTModels.csproj"
+            },
+            "D:\\Projects\\Argon\\ArgonLanguage\\ArgonBranchAnalyzer\\ArgonBranchAnalyzer.csproj": {
+              "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonBranchAnalyzer\\ArgonBranchAnalyzer.csproj"
             }
           }
         }

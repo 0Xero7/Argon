@@ -32,3 +32,7 @@ D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\runtimes\win-x64\n
 D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\runtimes\win-x86\native\libLLVM.dll
 D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\ArgonCodeGen.dll
 D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\ArgonCodeGen.pdb
+D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\ArgonBranchAnalyzer.dll
+D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\ArgonBranchAnalyzer.pdb
+D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\ArgonASTSanitizer.dll
+D:\Projects\Argon\ArgonLanguage\Argon\bin\Debug\netcoreapp3.0\ArgonASTSanitizer.pdb

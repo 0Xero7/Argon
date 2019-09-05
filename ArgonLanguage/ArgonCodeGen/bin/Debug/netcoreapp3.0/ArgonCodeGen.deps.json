@@ -9,6 +9,7 @@
       "ArgonCodeGen/1.0.0": {
         "dependencies": {
           "ArgonASTModels": "1.0.0",
+          "ArgonBranchAnalyzer": "1.0.0",
           "LLVMSharp": "5.0.0",
           "Microsoft.NETCore.App": "3.0.0-preview7-27912-14"
         },
@@ -726,9 +727,39 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
+      "ArgonAST/1.0.0": {
+        "dependencies": {
+          "ArgonASTModels": "1.0.0",
+          "ArgonSymbols": "1.0.0",
+          "Models": "1.0.0"
+        },
+        "runtime": {
+          "ArgonAST.dll": {}
+        }
+      },
       "ArgonASTModels/1.0.0": {
         "runtime": {
           "ArgonASTModels.dll": {}
+        }
+      },
+      "ArgonBranchAnalyzer/1.0.0": {
+        "dependencies": {
+          "ArgonAST": "1.0.0",
+          "ArgonASTModels": "1.0.0",
+          "ArgonSymbols": "1.0.0"
+        },
+        "runtime": {
+          "ArgonBranchAnalyzer.dll": {}
+        }
+      },
+      "ArgonSymbols/1.0.0": {
+        "runtime": {
+          "ArgonSymbols.dll": {}
+        }
+      },
+      "Models/1.0.0": {
+        "runtime": {
+          "Models.dll": {}
         }
       }
     }
@@ -1271,7 +1302,27 @@
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
+    "ArgonAST/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "ArgonASTModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonBranchAnalyzer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonSymbols/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

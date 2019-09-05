@@ -9,6 +9,7 @@
       "ArgonRunnable/1.0.0": {
         "dependencies": {
           "ArgonAST": "1.0.0",
+          "ArgonASTSanitizer": "1.0.0",
           "ArgonASTSerializer": "1.0.0",
           "ArgonCodeGen": "1.0.0",
           "ArgonLexer": "1.0.0",
@@ -738,6 +739,15 @@
           "ArgonASTModels.dll": {}
         }
       },
+      "ArgonASTSanitizer/1.0.0": {
+        "dependencies": {
+          "ArgonASTModels": "1.0.0",
+          "ArgonSymbols": "1.0.0"
+        },
+        "runtime": {
+          "ArgonASTSanitizer.dll": {}
+        }
+      },
       "ArgonASTSerializer/1.0.0": {
         "dependencies": {
           "ArgonAST": "1.0.0",
@@ -747,9 +757,20 @@
           "ArgonASTSerializer.dll": {}
         }
       },
+      "ArgonBranchAnalyzer/1.0.0": {
+        "dependencies": {
+          "ArgonAST": "1.0.0",
+          "ArgonASTModels": "1.0.0",
+          "ArgonSymbols": "1.0.0"
+        },
+        "runtime": {
+          "ArgonBranchAnalyzer.dll": {}
+        }
+      },
       "ArgonCodeGen/1.0.0": {
         "dependencies": {
           "ArgonASTModels": "1.0.0",
+          "ArgonBranchAnalyzer": "1.0.0",
           "LLVMSharp": "5.0.0"
         },
         "runtime": {
@@ -1318,7 +1339,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "ArgonASTSanitizer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "ArgonASTSerializer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonBranchAnalyzer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

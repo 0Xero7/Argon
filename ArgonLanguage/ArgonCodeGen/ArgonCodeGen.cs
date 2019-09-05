@@ -166,48 +166,145 @@ namespace ArgonCodeGen
             //BuildBr(b, thisFuncRetBlock);
         }
 
-        public static LLVMValueRef GIRIfElse(ArgonASTIf iff, LLVMModuleRef m, LLVMBuilderRef b, LLVMValueRef fn, 
+        public static void GIRIfElse(ArgonASTIf iff, LLVMModuleRef m, LLVMBuilderRef b, LLVMValueRef fn, 
             LLVMBasicBlockRef thisBlock)
         {
-            LLVMBasicBlockRef nextBlock = thisBlock.GetNextBasicBlock();
-            var cnd = GIRValueType(iff.condition, m, b);
+            var doesTrueReturn = ArgonBranchAnalyzer.ArgonAnalyzerBranchReturn.DoesBranchReturnFromAllPaths(iff.trueBlock);
+            var doesFalseReturn = ArgonBranchAnalyzer.ArgonAnalyzerBranchReturn.DoesBranchReturnFromAllPaths(iff.falseBlock);
 
-            var thenBlock = thisBlock.InsertBasicBlock("then");
-            var mergeBlock = thisBlock.InsertBasicBlock("merge");
-            var elseBlock = iff.falseBlock != null ? thisBlock.InsertBasicBlock("else") : mergeBlock;
-
-            thenBlock.MoveBasicBlockAfter(thisBlock);
-            if (iff.falseBlock != null)
-                elseBlock.MoveBasicBlockAfter(thenBlock);
-            mergeBlock.MoveBasicBlockAfter(iff.falseBlock != null ? elseBlock : thenBlock);
-
-            BuildCondBr(b, cnd, thenBlock, elseBlock);
-
-            PositionBuilderAtEnd(b, thenBlock);
-            GIRBlock(iff.trueBlock, m, b, fn, thenBlock);
-
-            var sxx = GetLastInstruction(thenBlock);
-            if (!LLVM.IsABranchInst(sxx).ToString().Trim().StartsWith("br"))
+            // Only Then Block
+            if (iff.falseBlock == null)
             {
-                BuildBr(b, mergeBlock);
+                var cnd = GIRValueType(iff.condition, m, b);
+
+                var thenBlock = thisBlock.InsertBasicBlock("then");
+                var mergeBlock = thisBlock.InsertBasicBlock("merge");
+
+                thenBlock.MoveBasicBlockAfter(thisBlock);
+                mergeBlock.MoveBasicBlockAfter(thenBlock);
+
+                BuildCondBr(b, cnd, thenBlock, mergeBlock);
+
+                PositionBuilderAtEnd(b, thenBlock);
+                GIRBlock(iff.trueBlock, m, b, fn, thenBlock);
+
+                if (!doesTrueReturn)
+                    BuildBr(b, mergeBlock);
+
+                PositionBuilderAtEnd(b, mergeBlock);
+            }
+            else   // Both Then and Else Block
+            {
+                var cnd = GIRValueType(iff.condition, m, b);
+
+                // One of the blocks does not return
+                if (!(doesTrueReturn && doesFalseReturn))
+                {
+                    var thenBlock = thisBlock.InsertBasicBlock("then");
+                    var elseBlock = thisBlock.InsertBasicBlock("else");
+                    var mergeBlock = thisBlock.InsertBasicBlock("merge");
+
+                    thenBlock.MoveBasicBlockAfter(thisBlock);
+                    elseBlock.MoveBasicBlockAfter(thenBlock);
+                    mergeBlock.MoveBasicBlockAfter(elseBlock);
+
+                    BuildCondBr(b, cnd, thenBlock, elseBlock);
+
+                    PositionBuilderAtEnd(b, thenBlock);
+                    GIRBlock(iff.trueBlock, m, b, fn, thenBlock);
+                    if (!doesTrueReturn)
+                        BuildBr(b, mergeBlock);
+
+                    PositionBuilderAtEnd(b, elseBlock);
+                    GIRBlock(iff.falseBlock, m, b, fn, elseBlock);
+                    if (!doesFalseReturn)
+                        BuildBr(b, mergeBlock);
+
+                    PositionBuilderAtEnd(b, mergeBlock);
+                }
+                else     // Both blocks return, no need for merge block
+                {
+                    var nextBlock = thisBlock.GetNextBasicBlock();
+
+                    var thenBlock = thisBlock.InsertBasicBlock("then");
+                    var elseBlock = thisBlock.InsertBasicBlock("else");
+
+                    thenBlock.MoveBasicBlockAfter(thisBlock);
+                    elseBlock.MoveBasicBlockAfter(thenBlock);
+
+                    BuildCondBr(b, cnd, thenBlock, elseBlock);
+
+                    PositionBuilderAtEnd(b, thenBlock);
+                    GIRBlock(iff.trueBlock, m, b, fn, thenBlock);
+
+                    PositionBuilderAtEnd(b, elseBlock);
+                    GIRBlock(iff.falseBlock, m, b, fn, elseBlock);
+
+                    PositionBuilderAtEnd(b, nextBlock);
+                }
             }
 
-            if (iff.falseBlock != null)
-            {
-                PositionBuilderAtEnd(b, elseBlock);
-                GIRBlock(iff.falseBlock, m, b, fn, elseBlock);
+            //bool makeMergeBlock = true;
 
-                var syy = GetLastInstruction(elseBlock);
-                Console.WriteLine(syy);
-                //if (!syy.ToString().Trim().StartsWith("br"))
-                //{
-                //    BuildBr(b, mergeBlock);
-                //}
-            }
+            //var cnd = GIRValueType(iff.condition, m, b);
 
-            PositionBuilderAtEnd(b, mergeBlock);
+            //var thenBlock = thisBlock.InsertBasicBlock("then");
+            //thenBlock.MoveBasicBlockAfter(thisBlock);
 
-            return cnd;
+            //LLVMBasicBlockRef elseBlock, mergeBlock = new LLVMBasicBlockRef();
+
+            //if ((doesTrueReturn && doesFalseReturn) || (doesTrueReturn && (iff.falseBlock == null)))
+            //    makeMergeBlock = false;
+
+            //PositionBuilderAtEnd(b, thenBlock);
+            //GIRBlock(iff.trueBlock, m, b, fn, thenBlock);
+
+            //if (!doesTrueReturn)
+            //{
+            //    BuildBr(b, mergeBlock);
+            //}
+
+
+
+            //LLVMBasicBlockRef nextBlock = thisBlock.GetNextBasicBlock();
+            //var cnd = GIRValueType(iff.condition, m, b);
+
+            //var thenBlock = thisBlock.InsertBasicBlock("then");
+            //var mergeBlock = thisBlock.InsertBasicBlock("merge");
+            //var elseBlock = iff.falseBlock != null ? thisBlock.InsertBasicBlock("else") : mergeBlock;
+
+            //thenBlock.MoveBasicBlockAfter(thisBlock);
+            //if (iff.falseBlock != null)
+            //    elseBlock.MoveBasicBlockAfter(thenBlock);
+            //mergeBlock.MoveBasicBlockAfter(iff.falseBlock != null ? elseBlock : thenBlock);
+
+            //BuildCondBr(b, cnd, thenBlock, elseBlock);
+
+            //PositionBuilderAtEnd(b, thenBlock);
+            //GIRBlock(iff.trueBlock, m, b, fn, thenBlock);
+
+            //var sxx = GetLastInstruction(thenBlock);
+            //if (!LLVM.IsABranchInst(sxx).ToString().Trim().StartsWith("br"))
+            //{
+            //    BuildBr(b, mergeBlock);
+            //}
+
+            //if (iff.falseBlock != null)
+            //{
+            //    PositionBuilderAtEnd(b, elseBlock);
+            //    GIRBlock(iff.falseBlock, m, b, fn, elseBlock);
+
+            //    var syy = GetLastInstruction(elseBlock);
+            //    Console.WriteLine(syy);
+            //    if (!syy.ToString().Trim().StartsWith("br"))
+            //    {
+            //        BuildBr(b, mergeBlock);
+            //    }
+            //}
+
+            //PositionBuilderAtEnd(b, mergeBlock);
+
+            //return cnd;
         }
 
         public static LLVMValueRef GIRWhile(ArgonASTWhile whl, LLVMModuleRef m, LLVMBuilderRef b, LLVMValueRef fn, 
@@ -304,6 +401,8 @@ namespace ArgonCodeGen
                     return BuildMul(b, left, right, "");
                 case "/":
                     return BuildSDiv(b, left, right, "");
+                case "%":
+                    return BuildSRem(b, left, right, "");
 
                 case ">":
                     return BuildICmp(b, LLVMIntPredicate.LLVMIntSGT, left, right, "");

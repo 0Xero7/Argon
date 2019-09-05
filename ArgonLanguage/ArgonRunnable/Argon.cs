@@ -13,6 +13,11 @@ namespace ArgonRunnable
             return ArgonAST.ASTBuilder.GenerateAST(arg);
         }
 
+        public static void SanitizeAST(ArgonASTModels.ArgonASTBase arg)
+        {
+            ArgonASTSanitizer.ArgonASTSanitizer.SantizeAST(arg as ArgonASTModels.ArgonASTBlock);
+        }
+
         public static void PrintAST(ArgonASTModels.ArgonASTBase prog)
         {
             Console.WriteLine(ArgonASTSerializer.ASTSerializer.SerializeAST(prog));
