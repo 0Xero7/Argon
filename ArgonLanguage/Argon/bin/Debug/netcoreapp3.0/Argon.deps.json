@@ -723,7 +723,8 @@
         "dependencies": {
           "ArgonASTModels": "1.0.0",
           "ArgonSymbols": "1.0.0",
-          "Models": "1.0.0"
+          "Models": "1.0.0",
+          "TokenStream": "1.0.0"
         },
         "runtime": {
           "ArgonAST.dll": {}
@@ -732,6 +733,15 @@
       "ArgonASTModels/1.0.0": {
         "runtime": {
           "ArgonASTModels.dll": {}
+        }
+      },
+      "ArgonASTSanitizer/1.0.0": {
+        "dependencies": {
+          "ArgonASTModels": "1.0.0",
+          "ArgonSymbols": "1.0.0"
+        },
+        "runtime": {
+          "ArgonASTSanitizer.dll": {}
         }
       },
       "ArgonASTSerializer/1.0.0": {
@@ -743,9 +753,23 @@
           "ArgonASTSerializer.dll": {}
         }
       },
+      "ArgonBranchAnalyzer/1.0.0": {
+        "dependencies": {
+          "ArgonAST": "1.0.0",
+          "ArgonASTModels": "1.0.0",
+          "ArgonSymbols": "1.0.0"
+        },
+        "runtime": {
+          "ArgonBranchAnalyzer.dll": {}
+        }
+      },
       "ArgonCodeGen/1.0.0": {
         "dependencies": {
           "ArgonASTModels": "1.0.0",
+          "ArgonBranchAnalyzer": "1.0.0",
+          "ArgonSymbolTable": "1.0.0",
+          "ArgonTypeCast": "1.0.0",
+          "ArgonTypeResolver": "1.0.0",
           "LLVMSharp": "5.0.0"
         },
         "runtime": {
@@ -755,7 +779,8 @@
       "ArgonLexer/1.0.0": {
         "dependencies": {
           "ArgonSymbols": "1.0.0",
-          "Models": "1.0.0"
+          "Models": "1.0.0",
+          "TokenStream": "1.0.0"
         },
         "runtime": {
           "ArgonLexer.dll": {}
@@ -764,10 +789,12 @@
       "ArgonRunnable/1.0.0": {
         "dependencies": {
           "ArgonAST": "1.0.0",
+          "ArgonASTSanitizer": "1.0.0",
           "ArgonASTSerializer": "1.0.0",
           "ArgonCodeGen": "1.0.0",
           "ArgonLexer": "1.0.0",
-          "Models": "1.0.0"
+          "Models": "1.0.0",
+          "TokenStream": "1.0.0"
         },
         "runtime": {
           "ArgonRunnable.dll": {}
@@ -778,9 +805,43 @@
           "ArgonSymbols.dll": {}
         }
       },
+      "ArgonSymbolTable/1.0.0": {
+        "dependencies": {
+          "LLVMSharp": "5.0.0"
+        },
+        "runtime": {
+          "ArgonSymbolTable.dll": {}
+        }
+      },
+      "ArgonTypeCast/1.0.0": {
+        "dependencies": {
+          "LLVMSharp": "5.0.0"
+        },
+        "runtime": {
+          "ArgonTypeCast.dll": {}
+        }
+      },
+      "ArgonTypeResolver/1.0.0": {
+        "dependencies": {
+          "ArgonASTModels": "1.0.0",
+          "ArgonSymbolTable": "1.0.0",
+          "ArgonSymbols": "1.0.0"
+        },
+        "runtime": {
+          "ArgonTypeResolver.dll": {}
+        }
+      },
       "Models/1.0.0": {
         "runtime": {
           "Models.dll": {}
+        }
+      },
+      "TokenStream/1.0.0": {
+        "dependencies": {
+          "Models": "1.0.0"
+        },
+        "runtime": {
+          "TokenStream.dll": {}
         }
       }
     }
@@ -1326,7 +1387,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "ArgonASTSanitizer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "ArgonASTSerializer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonBranchAnalyzer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1351,7 +1422,27 @@
       "serviceable": false,
       "sha512": ""
     },
+    "ArgonSymbolTable/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonTypeCast/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonTypeResolver/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TokenStream/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

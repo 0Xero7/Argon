@@ -1,0 +1,8 @@
+D:\Projects\Argon\ArgonLanguage\ArgonTypeCast\bin\Debug\netcoreapp3.0\ArgonTypeCast.deps.json
+D:\Projects\Argon\ArgonLanguage\ArgonTypeCast\bin\Debug\netcoreapp3.0\ArgonTypeCast.dll
+D:\Projects\Argon\ArgonLanguage\ArgonTypeCast\obj\Debug\netcoreapp3.0\ArgonTypeCast.csprojAssemblyReference.cache
+D:\Projects\Argon\ArgonLanguage\ArgonTypeCast\obj\Debug\netcoreapp3.0\ArgonTypeCast.AssemblyInfoInputs.cache
+D:\Projects\Argon\ArgonLanguage\ArgonTypeCast\obj\Debug\netcoreapp3.0\ArgonTypeCast.AssemblyInfo.cs
+D:\Projects\Argon\ArgonLanguage\ArgonTypeCast\bin\Debug\netcoreapp3.0\ArgonTypeCast.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonTypeCast\obj\Debug\netcoreapp3.0\ArgonTypeCast.dll
+D:\Projects\Argon\ArgonLanguage\ArgonTypeCast\obj\Debug\netcoreapp3.0\ArgonTypeCast.pdb

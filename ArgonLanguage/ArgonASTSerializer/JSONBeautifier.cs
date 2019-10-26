@@ -11,19 +11,7 @@ namespace ArgonASTSerializer
             string response = "";
             string indent = "";
 
-            return json.Replace("}", "\n}").Replace("{", "\n{\n");
-            for (int i = 0; i < json.Length; i++)
-            {
-                string block = "";
-
-                if (json[i] == '{')
-
-
-                while (json[i] != '}')
-                    block += json[i++];
-
-                response += indent + json;
-            }
+            return response;
         }
     }
 }

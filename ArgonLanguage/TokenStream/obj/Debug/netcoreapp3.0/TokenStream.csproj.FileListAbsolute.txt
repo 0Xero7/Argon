@@ -1,0 +1,11 @@
+D:\Projects\Argon\ArgonLanguage\TokenStream\bin\Debug\netcoreapp3.0\TokenStream.deps.json
+D:\Projects\Argon\ArgonLanguage\TokenStream\bin\Debug\netcoreapp3.0\TokenStream.dll
+D:\Projects\Argon\ArgonLanguage\TokenStream\bin\Debug\netcoreapp3.0\TokenStream.pdb
+D:\Projects\Argon\ArgonLanguage\TokenStream\bin\Debug\netcoreapp3.0\Models.dll
+D:\Projects\Argon\ArgonLanguage\TokenStream\bin\Debug\netcoreapp3.0\Models.pdb
+D:\Projects\Argon\ArgonLanguage\TokenStream\obj\Debug\netcoreapp3.0\TokenStream.csprojAssemblyReference.cache
+D:\Projects\Argon\ArgonLanguage\TokenStream\obj\Debug\netcoreapp3.0\TokenStream.AssemblyInfoInputs.cache
+D:\Projects\Argon\ArgonLanguage\TokenStream\obj\Debug\netcoreapp3.0\TokenStream.AssemblyInfo.cs
+D:\Projects\Argon\ArgonLanguage\TokenStream\obj\Debug\netcoreapp3.0\TokenStream.csproj.CopyComplete
+D:\Projects\Argon\ArgonLanguage\TokenStream\obj\Debug\netcoreapp3.0\TokenStream.dll
+D:\Projects\Argon\ArgonLanguage\TokenStream\obj\Debug\netcoreapp3.0\TokenStream.pdb

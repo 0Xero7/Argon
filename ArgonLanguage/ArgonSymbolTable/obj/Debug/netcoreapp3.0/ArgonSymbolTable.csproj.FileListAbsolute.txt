@@ -1,0 +1,8 @@
+D:\Projects\Argon\ArgonLanguage\ArgonSymbolTable\bin\Debug\netcoreapp3.0\ArgonSymbolTable.deps.json
+D:\Projects\Argon\ArgonLanguage\ArgonSymbolTable\bin\Debug\netcoreapp3.0\ArgonSymbolTable.dll
+D:\Projects\Argon\ArgonLanguage\ArgonSymbolTable\obj\Debug\netcoreapp3.0\ArgonSymbolTable.csprojAssemblyReference.cache
+D:\Projects\Argon\ArgonLanguage\ArgonSymbolTable\obj\Debug\netcoreapp3.0\ArgonSymbolTable.AssemblyInfoInputs.cache
+D:\Projects\Argon\ArgonLanguage\ArgonSymbolTable\obj\Debug\netcoreapp3.0\ArgonSymbolTable.AssemblyInfo.cs
+D:\Projects\Argon\ArgonLanguage\ArgonSymbolTable\bin\Debug\netcoreapp3.0\ArgonSymbolTable.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonSymbolTable\obj\Debug\netcoreapp3.0\ArgonSymbolTable.dll
+D:\Projects\Argon\ArgonLanguage\ArgonSymbolTable\obj\Debug\netcoreapp3.0\ArgonSymbolTable.pdb

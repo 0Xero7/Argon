@@ -9,5 +9,13 @@ namespace ArgonASTModels
     {
         public ValueContainer value;
         public string variable;
+
+        public ArgonASTAssignment() { }
+
+        public ArgonASTAssignment(string variable, ValueContainer value) 
+        {
+            this.variable = variable;
+            this.value = value;
+        }
     }
 }

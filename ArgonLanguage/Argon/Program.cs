@@ -12,12 +12,13 @@ namespace Argon
             using (StreamReader f = new StreamReader(@"D:\Projects\Argon\ArgonLanguage\hello.ar"))
                 text = f.ReadToEnd();
 
-            var list = ArgonRunnable.Argon.GetTokenList(text).ToArray();
+            var list = ArgonRunnable.Argon.GetTokenList(text);
 
-            foreach (var x in list)
+            foreach (var x in list.tokens)
                 Console.WriteLine($"{x.lineNumber:0000}  [{x.tokenType}]\t\t{x.tokenValue}");
 
             var s = ArgonRunnable.Argon.GetAST(list);
+            ArgonRunnable.Argon.SanitizeAST(s);
 
             Console.WriteLine("\n\n\n");
             ArgonRunnable.Argon.PrintAST(s);

@@ -56,7 +56,72 @@
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTSanitizer\\ArgonASTSanitizer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTSanitizer\\ArgonASTSanitizer.csproj",
+        "projectName": "ArgonASTSanitizer",
+        "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTSanitizer\\ArgonASTSanitizer.csproj",
+        "packagesPath": "C:\\Users\\smpsm\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTSanitizer\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\smpsm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTModels\\ArgonASTModels.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTModels\\ArgonASTModels.csproj"
+              },
+              "D:\\Projects\\Argon\\ArgonLanguage\\ArgonSymbols\\ArgonSymbols.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonSymbols\\ArgonSymbols.csproj"
+              }
+            }
           }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -119,7 +184,8 @@
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
-          }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -159,6 +225,9 @@
               },
               "D:\\Projects\\Argon\\ArgonLanguage\\Models\\Models.csproj": {
                 "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\Models\\Models.csproj"
+              },
+              "D:\\Projects\\Argon\\ArgonLanguage\\TokenStream\\TokenStream.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\TokenStream\\TokenStream.csproj"
               }
             }
           }
@@ -185,7 +254,75 @@
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\Argon\\ArgonLanguage\\ArgonBranchAnalyzer\\ArgonBranchAnalyzer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonBranchAnalyzer\\ArgonBranchAnalyzer.csproj",
+        "projectName": "ArgonBranchAnalyzer",
+        "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonBranchAnalyzer\\ArgonBranchAnalyzer.csproj",
+        "packagesPath": "C:\\Users\\smpsm\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonBranchAnalyzer\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\smpsm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTModels\\ArgonASTModels.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTModels\\ArgonASTModels.csproj"
+              },
+              "D:\\Projects\\Argon\\ArgonLanguage\\ArgonAST\\ArgonAST.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonAST\\ArgonAST.csproj"
+              },
+              "D:\\Projects\\Argon\\ArgonLanguage\\ArgonSymbols\\ArgonSymbols.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonSymbols\\ArgonSymbols.csproj"
+              }
+            }
           }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -219,6 +356,18 @@
             "projectReferences": {
               "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTModels\\ArgonASTModels.csproj": {
                 "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTModels\\ArgonASTModels.csproj"
+              },
+              "D:\\Projects\\Argon\\ArgonLanguage\\ArgonBranchAnalyzer\\ArgonBranchAnalyzer.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonBranchAnalyzer\\ArgonBranchAnalyzer.csproj"
+              },
+              "D:\\Projects\\Argon\\ArgonLanguage\\ArgonSymbolTable\\ArgonSymbolTable.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonSymbolTable\\ArgonSymbolTable.csproj"
+              },
+              "D:\\Projects\\Argon\\ArgonLanguage\\ArgonTypeCast\\ArgonTypeCast.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonTypeCast\\ArgonTypeCast.csproj"
+              },
+              "D:\\Projects\\Argon\\ArgonLanguage\\ArgonTypeResolver\\ArgonTypeResolver.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonTypeResolver\\ArgonTypeResolver.csproj"
               }
             }
           }
@@ -235,13 +384,6 @@
             "LLVMSharp": {
               "target": "Package",
               "version": "[5.0.0, )"
-            },
-            "Microsoft.NETCore.App": {
-              "include": "None",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.0.0-preview7-27912-14, )",
-              "autoReferenced": true
             }
           },
           "imports": [
@@ -258,7 +400,8 @@
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
-          }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -295,6 +438,9 @@
               },
               "D:\\Projects\\Argon\\ArgonLanguage\\Models\\Models.csproj": {
                 "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\Models\\Models.csproj"
+              },
+              "D:\\Projects\\Argon\\ArgonLanguage\\TokenStream\\TokenStream.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\TokenStream\\TokenStream.csproj"
               }
             }
           }
@@ -321,7 +467,8 @@
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
-          }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -353,6 +500,9 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
+              "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTSanitizer\\ArgonASTSanitizer.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTSanitizer\\ArgonASTSanitizer.csproj"
+              },
               "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTSerializer\\ArgonASTSerializer.csproj": {
                 "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTSerializer\\ArgonASTSerializer.csproj"
               },
@@ -367,6 +517,9 @@
               },
               "D:\\Projects\\Argon\\ArgonLanguage\\Models\\Models.csproj": {
                 "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\Models\\Models.csproj"
+              },
+              "D:\\Projects\\Argon\\ArgonLanguage\\TokenStream\\TokenStream.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\TokenStream\\TokenStream.csproj"
               }
             }
           }
@@ -393,7 +546,8 @@
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
-          }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -449,7 +603,201 @@
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\Argon\\ArgonLanguage\\ArgonSymbolTable\\ArgonSymbolTable.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonSymbolTable\\ArgonSymbolTable.csproj",
+        "projectName": "ArgonSymbolTable",
+        "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonSymbolTable\\ArgonSymbolTable.csproj",
+        "packagesPath": "C:\\Users\\smpsm\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonSymbolTable\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\smpsm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
           }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "LLVMSharp": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\Argon\\ArgonLanguage\\ArgonTypeCast\\ArgonTypeCast.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonTypeCast\\ArgonTypeCast.csproj",
+        "projectName": "ArgonTypeCast",
+        "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonTypeCast\\ArgonTypeCast.csproj",
+        "packagesPath": "C:\\Users\\smpsm\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonTypeCast\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\smpsm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "LLVMSharp": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\Argon\\ArgonLanguage\\ArgonTypeResolver\\ArgonTypeResolver.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonTypeResolver\\ArgonTypeResolver.csproj",
+        "projectName": "ArgonTypeResolver",
+        "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonTypeResolver\\ArgonTypeResolver.csproj",
+        "packagesPath": "C:\\Users\\smpsm\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonTypeResolver\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\smpsm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTModels\\ArgonASTModels.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTModels\\ArgonASTModels.csproj"
+              },
+              "D:\\Projects\\Argon\\ArgonLanguage\\ArgonSymbols\\ArgonSymbols.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonSymbols\\ArgonSymbols.csproj"
+              },
+              "D:\\Projects\\Argon\\ArgonLanguage\\ArgonSymbolTable\\ArgonSymbolTable.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonSymbolTable\\ArgonSymbolTable.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -509,7 +857,8 @@
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
-          }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -565,7 +914,69 @@
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\Argon\\ArgonLanguage\\TokenStream\\TokenStream.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\Argon\\ArgonLanguage\\TokenStream\\TokenStream.csproj",
+        "projectName": "TokenStream",
+        "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\TokenStream\\TokenStream.csproj",
+        "packagesPath": "C:\\Users\\smpsm\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Argon\\ArgonLanguage\\TokenStream\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\smpsm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "D:\\Projects\\Argon\\ArgonLanguage\\Models\\Models.csproj": {
+                "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\Models\\Models.csproj"
+              }
+            }
           }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,0 +1,13 @@
+D:\Projects\Argon\ArgonLanguage\ArgonASTSanitizer\bin\Debug\netcoreapp3.0\ArgonASTSanitizer.deps.json
+D:\Projects\Argon\ArgonLanguage\ArgonASTSanitizer\bin\Debug\netcoreapp3.0\ArgonASTSanitizer.dll
+D:\Projects\Argon\ArgonLanguage\ArgonASTSanitizer\bin\Debug\netcoreapp3.0\ArgonASTSanitizer.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonASTSanitizer\bin\Debug\netcoreapp3.0\ArgonASTModels.dll
+D:\Projects\Argon\ArgonLanguage\ArgonASTSanitizer\bin\Debug\netcoreapp3.0\ArgonSymbols.dll
+D:\Projects\Argon\ArgonLanguage\ArgonASTSanitizer\bin\Debug\netcoreapp3.0\ArgonASTModels.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonASTSanitizer\bin\Debug\netcoreapp3.0\ArgonSymbols.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonASTSanitizer\obj\Debug\netcoreapp3.0\ArgonASTSanitizer.csprojAssemblyReference.cache
+D:\Projects\Argon\ArgonLanguage\ArgonASTSanitizer\obj\Debug\netcoreapp3.0\ArgonASTSanitizer.AssemblyInfoInputs.cache
+D:\Projects\Argon\ArgonLanguage\ArgonASTSanitizer\obj\Debug\netcoreapp3.0\ArgonASTSanitizer.AssemblyInfo.cs
+D:\Projects\Argon\ArgonLanguage\ArgonASTSanitizer\obj\Debug\netcoreapp3.0\ArgonASTSanitizer.csproj.CopyComplete
+D:\Projects\Argon\ArgonLanguage\ArgonASTSanitizer\obj\Debug\netcoreapp3.0\ArgonASTSanitizer.dll
+D:\Projects\Argon\ArgonLanguage\ArgonASTSanitizer\obj\Debug\netcoreapp3.0\ArgonASTSanitizer.pdb

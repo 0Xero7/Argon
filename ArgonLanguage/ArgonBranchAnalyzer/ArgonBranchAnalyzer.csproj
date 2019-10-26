@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <ApplicationIcon />
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ArgonASTModels\ArgonASTModels.csproj" />
+    <ProjectReference Include="..\ArgonAST\ArgonAST.csproj" />
+    <ProjectReference Include="..\ArgonSymbols\ArgonSymbols.csproj" />
+  </ItemGroup>
+
+</Project>

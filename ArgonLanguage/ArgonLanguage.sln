@@ -19,7 +19,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArgonAST", "ArgonAST\ArgonA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArgonCodeGen", "ArgonCodeGen\ArgonCodeGen.csproj", "{4AF75CB5-8C3A-4FAD-9527-1F942BAD2DD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArgonASTSerializer", "ArgonASTSerializer\ArgonASTSerializer.csproj", "{2A6AA951-DA8A-4E4C-B7B2-9A29F86B8073}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArgonASTSerializer", "ArgonASTSerializer\ArgonASTSerializer.csproj", "{2A6AA951-DA8A-4E4C-B7B2-9A29F86B8073}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArgonBranchAnalyzer", "ArgonBranchAnalyzer\ArgonBranchAnalyzer.csproj", "{992641CD-4110-4F6A-9DE4-2911954D10E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArgonASTSanitizer", "ArgonASTSanitizer\ArgonASTSanitizer.csproj", "{EED62230-5E51-4A07-9485-0ADF9419D243}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArgonTypeResolver", "ArgonTypeResolver\ArgonTypeResolver.csproj", "{6B352B02-214B-4CC1-AEF7-AFEF4C8C9B34}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArgonSymbolTable", "ArgonSymbolTable\ArgonSymbolTable.csproj", "{BCF53C42-BD95-4B68-A5C1-23BC86A11453}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArgonTypeCast", "ArgonTypeCast\ArgonTypeCast.csproj", "{98BFEB7F-94B9-4189-A321-C442C64DA9B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenStream", "TokenStream\TokenStream.csproj", "{8FAE61F8-2D4A-49DA-B0B8-4AB6ABEE7058}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +75,30 @@ Global
 		{2A6AA951-DA8A-4E4C-B7B2-9A29F86B8073}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A6AA951-DA8A-4E4C-B7B2-9A29F86B8073}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A6AA951-DA8A-4E4C-B7B2-9A29F86B8073}.Release|Any CPU.Build.0 = Release|Any CPU
+		{992641CD-4110-4F6A-9DE4-2911954D10E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{992641CD-4110-4F6A-9DE4-2911954D10E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{992641CD-4110-4F6A-9DE4-2911954D10E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{992641CD-4110-4F6A-9DE4-2911954D10E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EED62230-5E51-4A07-9485-0ADF9419D243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EED62230-5E51-4A07-9485-0ADF9419D243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EED62230-5E51-4A07-9485-0ADF9419D243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EED62230-5E51-4A07-9485-0ADF9419D243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B352B02-214B-4CC1-AEF7-AFEF4C8C9B34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B352B02-214B-4CC1-AEF7-AFEF4C8C9B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B352B02-214B-4CC1-AEF7-AFEF4C8C9B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B352B02-214B-4CC1-AEF7-AFEF4C8C9B34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCF53C42-BD95-4B68-A5C1-23BC86A11453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCF53C42-BD95-4B68-A5C1-23BC86A11453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCF53C42-BD95-4B68-A5C1-23BC86A11453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCF53C42-BD95-4B68-A5C1-23BC86A11453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98BFEB7F-94B9-4189-A321-C442C64DA9B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98BFEB7F-94B9-4189-A321-C442C64DA9B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98BFEB7F-94B9-4189-A321-C442C64DA9B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98BFEB7F-94B9-4189-A321-C442C64DA9B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FAE61F8-2D4A-49DA-B0B8-4AB6ABEE7058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FAE61F8-2D4A-49DA-B0B8-4AB6ABEE7058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FAE61F8-2D4A-49DA-B0B8-4AB6ABEE7058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FAE61F8-2D4A-49DA-B0B8-4AB6ABEE7058}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

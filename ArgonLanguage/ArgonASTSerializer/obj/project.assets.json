@@ -8,7 +8,8 @@
         "dependencies": {
           "ArgonASTModels": "1.0.0",
           "ArgonSymbols": "1.0.0",
-          "Models": "1.0.0"
+          "Models": "1.0.0",
+          "TokenStream": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ArgonAST.dll": {}
@@ -46,6 +47,19 @@
         "runtime": {
           "bin/placeholder/Models.dll": {}
         }
+      },
+      "TokenStream/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TokenStream.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TokenStream.dll": {}
+        }
       }
     }
   },
@@ -69,6 +83,11 @@
       "type": "project",
       "path": "../Models/Models.csproj",
       "msbuildProject": "../Models/Models.csproj"
+    },
+    "TokenStream/1.0.0": {
+      "type": "project",
+      "path": "../TokenStream/TokenStream.csproj",
+      "msbuildProject": "../TokenStream/TokenStream.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -141,7 +160,8 @@
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
-        }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

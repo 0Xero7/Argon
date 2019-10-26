@@ -5,11 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ArgonASTSanitizer\ArgonASTSanitizer.csproj" />
     <ProjectReference Include="..\ArgonASTSerializer\ArgonASTSerializer.csproj" />
     <ProjectReference Include="..\ArgonAST\ArgonAST.csproj" />
     <ProjectReference Include="..\ArgonCodeGen\ArgonCodeGen.csproj" />
     <ProjectReference Include="..\ArgonLexer\ArgonLexer.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\TokenStream\TokenStream.csproj" />
   </ItemGroup>
 
 </Project>

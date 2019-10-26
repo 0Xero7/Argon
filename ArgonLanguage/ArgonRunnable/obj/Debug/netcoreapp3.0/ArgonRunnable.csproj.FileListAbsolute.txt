@@ -1,4 +1,3 @@
-D:\Projects\Argon\ArgonLanguage\ArgonRunnable\obj\Debug\netcoreapp3.0\ArgonRunnable.csproj.CoreCompileInputs.cache
 D:\Projects\Argon\ArgonLanguage\ArgonRunnable\obj\Debug\netcoreapp3.0\ArgonRunnable.AssemblyInfoInputs.cache
 D:\Projects\Argon\ArgonLanguage\ArgonRunnable\obj\Debug\netcoreapp3.0\ArgonRunnable.AssemblyInfo.cs
 D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonRunnable.deps.json
@@ -22,3 +21,15 @@ D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonASTSe
 D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonASTSerializer.pdb
 D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonCodeGen.dll
 D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonCodeGen.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonBranchAnalyzer.dll
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonBranchAnalyzer.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonASTSanitizer.dll
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonASTSanitizer.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonSymbolTable.dll
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonSymbolTable.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonTypeResolver.dll
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonTypeResolver.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonTypeCast.dll
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\ArgonTypeCast.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\TokenStream.dll
+D:\Projects\Argon\ArgonLanguage\ArgonRunnable\bin\Debug\netcoreapp3.0\TokenStream.pdb

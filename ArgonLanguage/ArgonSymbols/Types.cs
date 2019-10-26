@@ -7,7 +7,7 @@ namespace ArgonSymbols
     public static class Types
     {
         private static List<string> list = new List<string>()
-            { "int", "string", "void" };
+            { "int", "float", "string", "bool", "void" };
 
         public static bool IsType(string arg) => list.Contains(arg);
     }

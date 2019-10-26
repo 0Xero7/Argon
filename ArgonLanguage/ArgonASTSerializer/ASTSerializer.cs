@@ -43,12 +43,20 @@ namespace ArgonASTSerializer
                     response = $"\"Literal\" : {{\"Type\" : \"int\",\"Value\" : \"{ilit.value}\"}}";
                     break;
 
+                case ArgonASTFloatLiteral ilit:
+                    response = $"\"Literal\" : {{\"Type\" : \"float\",\"Value\" : \"{ilit.value}\"}}";
+                    break;
+
                 case ArgonASTStringLiteral slit:
                     response = $"\"Literal\" : {{\"Type\" : \"string\",\"Value\" : \"{slit.value}\"}}";
                     break;
 
                 case ArgonASTPrint print:
                     response = $"\"Print Function\" : {{\"Expression\" : {{{SerializeBlock(print.expression, indent + 1)}}}}}";
+                    break;
+
+                case ArgonASTUnaryOperator binop:
+                    response = $"\"Unary Operator\" : {{\"Operator\" : \"{binop.Operator}\",\"Left\" : {{{SerializeBlock(binop.left, indent)}}}}}";
                     break;
 
                 case ArgonASTBinaryOperator binop:
@@ -61,6 +69,10 @@ namespace ArgonASTSerializer
 
                 case ArgonASTReturn ret:
                     response = $"\"Function Return\" : {{\"Expression\" : {{{SerializeBlock(ret.expression, indent)}}}}}";
+                    break;
+
+                case ArgonASTContinue cnt:
+                    response = $"\"Continue Loop\" : {{ }}";
                     break;
 
                 case ArgonASTIf iff:

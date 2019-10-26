@@ -10,6 +10,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ArgonASTModels\ArgonASTModels.csproj" />
+    <ProjectReference Include="..\ArgonBranchAnalyzer\ArgonBranchAnalyzer.csproj" />
+    <ProjectReference Include="..\ArgonSymbolTable\ArgonSymbolTable.csproj" />
+    <ProjectReference Include="..\ArgonTypeCast\ArgonTypeCast.csproj" />
+    <ProjectReference Include="..\ArgonTypeResolver\ArgonTypeResolver.csproj" />
   </ItemGroup>
 
 </Project>

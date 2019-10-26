@@ -10,9 +10,10 @@ D:\Projects\Argon\ArgonLanguage\ArgonASTSerializer\bin\Debug\netcoreapp3.0\Argon
 D:\Projects\Argon\ArgonLanguage\ArgonASTSerializer\bin\Debug\netcoreapp3.0\ArgonSymbols.pdb
 D:\Projects\Argon\ArgonLanguage\ArgonASTSerializer\bin\Debug\netcoreapp3.0\Models.pdb
 D:\Projects\Argon\ArgonLanguage\ArgonASTSerializer\obj\Debug\netcoreapp3.0\ArgonASTSerializer.csprojAssemblyReference.cache
-D:\Projects\Argon\ArgonLanguage\ArgonASTSerializer\obj\Debug\netcoreapp3.0\ArgonASTSerializer.csproj.CoreCompileInputs.cache
 D:\Projects\Argon\ArgonLanguage\ArgonASTSerializer\obj\Debug\netcoreapp3.0\ArgonASTSerializer.AssemblyInfoInputs.cache
 D:\Projects\Argon\ArgonLanguage\ArgonASTSerializer\obj\Debug\netcoreapp3.0\ArgonASTSerializer.AssemblyInfo.cs
 D:\Projects\Argon\ArgonLanguage\ArgonASTSerializer\obj\Debug\netcoreapp3.0\ArgonASTSerializer.csproj.CopyComplete
 D:\Projects\Argon\ArgonLanguage\ArgonASTSerializer\obj\Debug\netcoreapp3.0\ArgonASTSerializer.dll
 D:\Projects\Argon\ArgonLanguage\ArgonASTSerializer\obj\Debug\netcoreapp3.0\ArgonASTSerializer.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonASTSerializer\bin\Debug\netcoreapp3.0\TokenStream.dll
+D:\Projects\Argon\ArgonLanguage\ArgonASTSerializer\bin\Debug\netcoreapp3.0\TokenStream.pdb

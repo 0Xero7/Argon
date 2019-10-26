@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using ArgonSymbols;
 using Models;
+using TokenStream;
 
 namespace ArgonLexer
 {
@@ -18,18 +19,22 @@ namespace ArgonLexer
         private static int lineNumber = 1;
 
         private static List<Token> tokens;
+        private static ArgonTokenStream tokenStream;
 
         private static void InitTokenList()
         {
             tokens = new List<Token>();
+            tokenStream = new ArgonTokenStream();
             lineNumber = 1;
         }
 
-        public static List<Token> GetTokens(string text)
+        public static ArgonTokenStream GetTokens(string text)
         {
             InitTokenList();
 
             string token = "";
+
+            LexerSymbolType type = LexerSymbolType.WhiteSpace;
 
             int ptr = 0;
             while (true && ptr < text.Length)
@@ -41,13 +46,17 @@ namespace ArgonLexer
                         token += text[ptr];
 
                     ptr++;
+
+                    // Replace Special Characters with their LLVM equivalent
+                    token = System.Text.RegularExpressions.Regex.Unescape(token);
+
                     AppendToTokenList(token, lineNumber, true);
                     token = "";
                     continue;
                 }
 
                 char c = text[ptr];
-                var type = GetSymbolType(c);
+                type = GetSymbolType(c, type);
                 token += c;
 
                 // Increment Line Numbers
@@ -55,7 +64,7 @@ namespace ArgonLexer
                     lineNumber++;
 
                 // While another type of character is encountered keep adding to the current token
-                while (++ptr < text.Length && GetSymbolType(text[ptr]) == type)
+                while (++ptr < text.Length && ((GetSymbolType(text[ptr], type) == type) || (text[ptr] == '.' && type == LexerSymbolType.Numeric)))
                 {
                     // Increment Line Numbers
                     if (text[ptr] == '\n')
@@ -80,7 +89,7 @@ namespace ArgonLexer
                 }
 
                 // Current token is complete, add it to the token list
-                AppendToTokenList(token,lineNumber);
+                AppendToTokenList(token, lineNumber);
                 token = "";
             }
 
@@ -88,7 +97,7 @@ namespace ArgonLexer
             if (token != "")
                 AppendToTokenList(token, lineNumber);
 
-            return tokens;
+            return tokenStream;
         }
 
         /// <summary>
@@ -98,7 +107,11 @@ namespace ArgonLexer
         private static void AppendToTokenList(string token, int lineNumber, bool isString = false)
         {
             if (isString)
-            { tokens.Add(new Token() { tokenValue = token, tokenType = TokenType.StringLiteral, lineNumber = lineNumber }); return; }
+            { 
+                tokens.Add(new Token() { tokenValue = token, tokenType = TokenType.StringLiteral, lineNumber = lineNumber }); 
+                tokenStream.AddToken(new Token() { tokenValue = token, tokenType = TokenType.StringLiteral, lineNumber = lineNumber });
+                return; 
+            }
 
             if (token.Trim() == "") return;
 
@@ -115,13 +128,14 @@ namespace ArgonLexer
 
 
             tokens.Add(new Token() { tokenValue = token, tokenType = type, lineNumber = lineNumber });
+            tokenStream.AddToken(new Token() { tokenValue = token, tokenType = type, lineNumber = lineNumber });
         }
 
-        private static LexerSymbolType GetSymbolType(char arg)
+        private static LexerSymbolType GetSymbolType(char arg, LexerSymbolType currentType)
         {
             if (arg == '\"') return LexerSymbolType.Special;
             if (char.IsWhiteSpace(arg)) return LexerSymbolType.WhiteSpace;
-            if (char.IsLetter(arg)) return LexerSymbolType.Alphabet;
+            if (char.IsLetter(arg) || arg == '_' || (char.IsNumber(arg) && currentType == LexerSymbolType.Alphabet)) return LexerSymbolType.Alphabet;
             if (char.IsNumber(arg)) return LexerSymbolType.Numeric;
             return LexerSymbolType.Symbol;
         }

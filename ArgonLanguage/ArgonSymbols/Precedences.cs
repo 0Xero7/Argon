@@ -31,7 +31,12 @@ namespace ArgonSymbols
             { "+" , 1 },
             { "-" , 1 },
             { "*" , 2 },
-            { "/" , 2 }
+            { "/" , 2 },
+            { "%" , 3 },
+
+            { "unary -", 997 },      // The Unary Negation
+            { "unary &", 998 },      // Get Reference
+            { "unary *", 999 },      // Reference
         };
     }
 }

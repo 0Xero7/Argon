@@ -1236,7 +1236,8 @@
         "dependencies": {
           "ArgonASTModels": "1.0.0",
           "ArgonSymbols": "1.0.0",
-          "Models": "1.0.0"
+          "Models": "1.0.0",
+          "TokenStream": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ArgonAST.dll": {}
@@ -1255,6 +1256,20 @@
           "bin/placeholder/ArgonASTModels.dll": {}
         }
       },
+      "ArgonASTSanitizer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "ArgonASTModels": "1.0.0",
+          "ArgonSymbols": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ArgonASTSanitizer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ArgonASTSanitizer.dll": {}
+        }
+      },
       "ArgonASTSerializer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
@@ -1269,11 +1284,30 @@
           "bin/placeholder/ArgonASTSerializer.dll": {}
         }
       },
+      "ArgonBranchAnalyzer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "ArgonAST": "1.0.0",
+          "ArgonASTModels": "1.0.0",
+          "ArgonSymbols": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ArgonBranchAnalyzer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ArgonBranchAnalyzer.dll": {}
+        }
+      },
       "ArgonCodeGen/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
           "ArgonASTModels": "1.0.0",
+          "ArgonBranchAnalyzer": "1.0.0",
+          "ArgonSymbolTable": "1.0.0",
+          "ArgonTypeCast": "1.0.0",
+          "ArgonTypeResolver": "1.0.0",
           "LLVMSharp": "5.0.0"
         },
         "compile": {
@@ -1288,7 +1322,8 @@
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
           "ArgonSymbols": "1.0.0",
-          "Models": "1.0.0"
+          "Models": "1.0.0",
+          "TokenStream": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ArgonLexer.dll": {}
@@ -1307,6 +1342,47 @@
           "bin/placeholder/ArgonSymbols.dll": {}
         }
       },
+      "ArgonSymbolTable/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "LLVMSharp": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ArgonSymbolTable.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ArgonSymbolTable.dll": {}
+        }
+      },
+      "ArgonTypeCast/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "LLVMSharp": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ArgonTypeCast.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ArgonTypeCast.dll": {}
+        }
+      },
+      "ArgonTypeResolver/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "ArgonASTModels": "1.0.0",
+          "ArgonSymbolTable": "1.0.0",
+          "ArgonSymbols": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ArgonTypeResolver.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ArgonTypeResolver.dll": {}
+        }
+      },
       "Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
@@ -1315,6 +1391,19 @@
         },
         "runtime": {
           "bin/placeholder/Models.dll": {}
+        }
+      },
+      "TokenStream/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TokenStream.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TokenStream.dll": {}
         }
       }
     }
@@ -4628,10 +4717,20 @@
       "path": "../ArgonASTModels/ArgonASTModels.csproj",
       "msbuildProject": "../ArgonASTModels/ArgonASTModels.csproj"
     },
+    "ArgonASTSanitizer/1.0.0": {
+      "type": "project",
+      "path": "../ArgonASTSanitizer/ArgonASTSanitizer.csproj",
+      "msbuildProject": "../ArgonASTSanitizer/ArgonASTSanitizer.csproj"
+    },
     "ArgonASTSerializer/1.0.0": {
       "type": "project",
       "path": "../ArgonASTSerializer/ArgonASTSerializer.csproj",
       "msbuildProject": "../ArgonASTSerializer/ArgonASTSerializer.csproj"
+    },
+    "ArgonBranchAnalyzer/1.0.0": {
+      "type": "project",
+      "path": "../ArgonBranchAnalyzer/ArgonBranchAnalyzer.csproj",
+      "msbuildProject": "../ArgonBranchAnalyzer/ArgonBranchAnalyzer.csproj"
     },
     "ArgonCodeGen/1.0.0": {
       "type": "project",
@@ -4648,19 +4747,41 @@
       "path": "../ArgonSymbols/ArgonSymbols.csproj",
       "msbuildProject": "../ArgonSymbols/ArgonSymbols.csproj"
     },
+    "ArgonSymbolTable/1.0.0": {
+      "type": "project",
+      "path": "../ArgonSymbolTable/ArgonSymbolTable.csproj",
+      "msbuildProject": "../ArgonSymbolTable/ArgonSymbolTable.csproj"
+    },
+    "ArgonTypeCast/1.0.0": {
+      "type": "project",
+      "path": "../ArgonTypeCast/ArgonTypeCast.csproj",
+      "msbuildProject": "../ArgonTypeCast/ArgonTypeCast.csproj"
+    },
+    "ArgonTypeResolver/1.0.0": {
+      "type": "project",
+      "path": "../ArgonTypeResolver/ArgonTypeResolver.csproj",
+      "msbuildProject": "../ArgonTypeResolver/ArgonTypeResolver.csproj"
+    },
     "Models/1.0.0": {
       "type": "project",
       "path": "../Models/Models.csproj",
       "msbuildProject": "../Models/Models.csproj"
+    },
+    "TokenStream/1.0.0": {
+      "type": "project",
+      "path": "../TokenStream/TokenStream.csproj",
+      "msbuildProject": "../TokenStream/TokenStream.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "ArgonAST >= 1.0.0",
+      "ArgonASTSanitizer >= 1.0.0",
       "ArgonASTSerializer >= 1.0.0",
       "ArgonCodeGen >= 1.0.0",
       "ArgonLexer >= 1.0.0",
-      "Models >= 1.0.0"
+      "Models >= 1.0.0",
+      "TokenStream >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4696,6 +4817,9 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
+            "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTSanitizer\\ArgonASTSanitizer.csproj": {
+              "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTSanitizer\\ArgonASTSanitizer.csproj"
+            },
             "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTSerializer\\ArgonASTSerializer.csproj": {
               "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\ArgonASTSerializer\\ArgonASTSerializer.csproj"
             },
@@ -4710,6 +4834,9 @@
             },
             "D:\\Projects\\Argon\\ArgonLanguage\\Models\\Models.csproj": {
               "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\Models\\Models.csproj"
+            },
+            "D:\\Projects\\Argon\\ArgonLanguage\\TokenStream\\TokenStream.csproj": {
+              "projectPath": "D:\\Projects\\Argon\\ArgonLanguage\\TokenStream\\TokenStream.csproj"
             }
           }
         }
@@ -4736,7 +4863,8 @@
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
-        }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },

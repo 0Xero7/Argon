@@ -1,0 +1,47 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "ArgonASTSanitizer/1.0.0": {
+        "dependencies": {
+          "ArgonASTModels": "1.0.0",
+          "ArgonSymbols": "1.0.0"
+        },
+        "runtime": {
+          "ArgonASTSanitizer.dll": {}
+        }
+      },
+      "ArgonASTModels/1.0.0": {
+        "runtime": {
+          "ArgonASTModels.dll": {}
+        }
+      },
+      "ArgonSymbols/1.0.0": {
+        "runtime": {
+          "ArgonSymbols.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ArgonASTSanitizer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonASTModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArgonSymbols/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

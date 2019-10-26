@@ -12,14 +12,24 @@ namespace ArgonCodeGen
         public static Dictionary<string, LLVMSharp.LLVMTypeRef> AST2LLVMTypes = new Dictionary<string, LLVMSharp.LLVMTypeRef>()
         {
             { "int", Int32Type() },
+            { "float", FloatType() },
             { "void", VoidType() },
             { "string", PointerType(Int8Type(), 0) }
         };
 
-        public static Dictionary<string, (string type, LLVMSharp.LLVMValueRef vref, bool IsPtr)> Variables = 
-            new Dictionary<string, (string type, LLVMSharp.LLVMValueRef vref, bool IsPtr)>();
+        public static LLVMSharp.LLVMTypeRef GetLLVMType(string arg)
+        {
+            if (!arg.EndsWith('*'))
+                return AST2LLVMTypes[arg];
 
-        public static Dictionary<string, (string type, LLVMSharp.LLVMValueRef vref)> Functions 
-            = new Dictionary<string, (string type, LLVMSharp.LLVMValueRef vref)>();
+            var startIndex = arg.IndexOf('*');
+            var type = arg.Substring(0, startIndex);
+            var llvmtype = AST2LLVMTypes[type];
+
+            for (int i = 0; i < arg.Length - startIndex; i++)
+                llvmtype = PointerType(llvmtype, 0);
+
+            return llvmtype;
+        }
     }
 }

@@ -1,0 +1,15 @@
+D:\Projects\Argon\ArgonLanguage\ArgonTypeResolver\bin\Debug\netcoreapp3.0\ArgonTypeResolver.deps.json
+D:\Projects\Argon\ArgonLanguage\ArgonTypeResolver\bin\Debug\netcoreapp3.0\ArgonTypeResolver.dll
+D:\Projects\Argon\ArgonLanguage\ArgonTypeResolver\bin\Debug\netcoreapp3.0\ArgonTypeResolver.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonTypeResolver\bin\Debug\netcoreapp3.0\ArgonASTModels.dll
+D:\Projects\Argon\ArgonLanguage\ArgonTypeResolver\bin\Debug\netcoreapp3.0\ArgonSymbols.dll
+D:\Projects\Argon\ArgonLanguage\ArgonTypeResolver\bin\Debug\netcoreapp3.0\ArgonSymbolTable.dll
+D:\Projects\Argon\ArgonLanguage\ArgonTypeResolver\bin\Debug\netcoreapp3.0\ArgonASTModels.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonTypeResolver\bin\Debug\netcoreapp3.0\ArgonSymbols.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonTypeResolver\bin\Debug\netcoreapp3.0\ArgonSymbolTable.pdb
+D:\Projects\Argon\ArgonLanguage\ArgonTypeResolver\obj\Debug\netcoreapp3.0\ArgonTypeResolver.csprojAssemblyReference.cache
+D:\Projects\Argon\ArgonLanguage\ArgonTypeResolver\obj\Debug\netcoreapp3.0\ArgonTypeResolver.AssemblyInfoInputs.cache
+D:\Projects\Argon\ArgonLanguage\ArgonTypeResolver\obj\Debug\netcoreapp3.0\ArgonTypeResolver.AssemblyInfo.cs
+D:\Projects\Argon\ArgonLanguage\ArgonTypeResolver\obj\Debug\netcoreapp3.0\ArgonTypeResolver.csproj.CopyComplete
+D:\Projects\Argon\ArgonLanguage\ArgonTypeResolver\obj\Debug\netcoreapp3.0\ArgonTypeResolver.dll
+D:\Projects\Argon\ArgonLanguage\ArgonTypeResolver\obj\Debug\netcoreapp3.0\ArgonTypeResolver.pdb
